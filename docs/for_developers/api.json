@@ -1,0 +1,1423 @@
+{
+  "MyArray": [
+    {
+      "alias": "_G",
+      "functions": [
+        {
+          "alias": "defer",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "vector",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "readfile",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "vtable_bind",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "vtable_thunk",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "writefile",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "bit",
+      "functions": [
+        {
+          "alias": "arshift",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "n",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "arithmetic right-shift of x by n bits",
+          "returns": []
+        },
+        {
+          "alias": "band",
+          "arguments": [
+            {
+              "alias": "x1",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "x2",
+              "type": "number",
+              "optional": true
+            },
+            {
+              "alias": "...",
+              "type": "variadic number",
+              "optional": true
+            }
+          ],
+          "description": "bitwise and of x1, x2, ...",
+          "returns": []
+        },
+        {
+          "alias": "bnot",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "bitwise not of x",
+          "returns": []
+        },
+        {
+          "alias": "bor",
+          "arguments": [
+            {
+              "alias": "x1",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "x2",
+              "type": "number",
+              "optional": true
+            },
+            {
+              "alias": "...",
+              "type": "variadic number",
+              "optional": true
+            }
+          ],
+          "description": "bitwise or of x1, x2, ...",
+          "returns": []
+        },
+        {
+          "alias": "bswap",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "byte-swap of x (little-endian <-> big-endian)",
+          "returns": []
+        },
+        {
+          "alias": "bxor",
+          "arguments": [
+            {
+              "alias": "x1",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "x2",
+              "type": "number",
+              "optional": true
+            },
+            {
+              "alias": "...",
+              "type": "variadic number",
+              "optional": true
+            }
+          ],
+          "description": "bitwise xor of x1, x2, ...",
+          "returns": []
+        },
+        {
+          "alias": "lshift",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "n",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "left-shift of x by n bits",
+          "returns": []
+        },
+        {
+          "alias": "rol",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "n",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "left-rotate of x by n bits",
+          "returns": []
+        },
+        {
+          "alias": "ror",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "n",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "right-rotate of x by n bits",
+          "returns": []
+        },
+        {
+          "alias": "rshift",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "n",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "logical right-shift of x by n bits",
+          "returns": []
+        },
+        {
+          "alias": "tobit",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "normalize number to the numeric range of bit operations (all bit ops use this implicitly)",
+          "returns": []
+        },
+        {
+          "alias": "tohex",
+          "arguments": [
+            {
+              "alias": "x",
+              "type": "number",
+              "optional": false
+            },
+            {
+              "alias": "n",
+              "type": "number",
+              "optional": false
+            }
+          ],
+          "description": "convert x to hex with n digits (default 8)"
+        }
+      ]
+    },
+    {
+      "alias": "client",
+      "functions": [
+        {
+          "alias": "camera_angles",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "camera_position",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "color_log",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "create_interface",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "delay_call",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_circle",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_circle_outline",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_debug_text",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_gradient",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_hitboxes",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_indicator",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_line",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_rectangle",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "draw_text",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "error_log",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "exec",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "eye_position",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "find_signature",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_cvar",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_model_name",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "key_state",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "latency",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "log",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "random_float",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "random_int",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "register_esp_flag",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "reload_active_scripts",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "scale_damage",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "screen_size",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_clan_tag",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_cvar",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_event_callback",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "system_time",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "timestamp",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "trace_bullet",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "trace_line",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "unix_time",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "unset_event_callback",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "update_player_list",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "userid_to_entindex",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "visible",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "world_to_screen",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "config",
+      "functions": [
+        {
+          "alias": "export",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "import",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "load",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "cvar{}",
+      "functions": [
+        {
+          "alias": "get_float",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_int",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_string",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "invoke_callback",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_float",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_int",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_raw_float",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_raw_int",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_string",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        }
+      ]
+    },
+    {
+      "alias": "database",
+      "functions": [
+        {
+          "alias": "flush",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "read",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "write",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "entity",
+      "functions": [
+        {
+          "alias": "get_all",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_bounding_box",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_classname",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_esp_data",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_game_rules",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_local_player",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_origin",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_player_name",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_player_resource",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_player_weapon",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_players",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_prop",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_steam64",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "hitbox_position",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "is_alive",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "is_dormant",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "is_enemy",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_prop",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "globals",
+      "functions": [
+        {
+          "alias": "absoluteframetime",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "chokedcommands",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "commandack",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "curtime",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "framecount",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "frametime",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "lastoutgoingcommand",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "mapname",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "maxplayers",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "oldcommandack",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "realtime",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "tickcount",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "tickinterval",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "json",
+      "functions": [
+        {
+          "alias": "decode_invalid_numbers",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "decode_max_depth",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "encode_invalid_numbers",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "encode_max_depth",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "encode_number_precision",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "encode_sparse_array",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "parse",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "stringify",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "materialsystem",
+      "functions": [
+        {
+          "alias": "arms_material",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "chams_material",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "find_material",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "find_materials",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "find_texture",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_model_materials",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "override_material",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "materialsystem{}",
+      "functions": [
+        {
+          "alias": "alpha_modulate",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "color_modulate",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_material_var_flag",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "get_shader_param",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "reload",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_material_var_flag",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_shader_param",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "ffi",
+      "functions": [
+        {
+          "alias": "abi",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "alignof",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "cast",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "cdef",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "copy",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "errno",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "fill",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "gc",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "istype",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "metatype",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "offsetof",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "sizeof",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "string",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "typeinfo",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "typeof",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "vector{}",
+      "functions": [
+        {
+          "alias": "init",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "init_from_angles",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "scale",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "scaled",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "normalize",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "normalized",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "length2d",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "length2dsqr",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "length",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "lengthsqr",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "lerp",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "dot",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "dist",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "dist2d",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "cross",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "angles",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "vectors",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "to",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "panorama",
+      "functions": [
+        {
+          "alias": "loadstring",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "open",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "plist",
+      "functions": [
+        {
+          "alias": "get",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "renderer",
+      "functions": [
+        {
+          "alias": "circle",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "circle_outline",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "gradient",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "indicator",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "line",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "load_jpg",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "load_png",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "load_rgba",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "load_svg",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "measure_text",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "rectangle",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "text",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "texture",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "triangle",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "world_to_screen",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    },
+    {
+      "alias": "ui",
+      "functions": [
+        {
+          "alias": "get",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "is_menu_open",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "menu_position",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "menu_size",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "mouse_position",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "name",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_button",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_checkbox",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_color_picker",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_combobox",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_hotkey",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_label",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_listbox",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_multiselect",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_slider",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_string",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "new_textbox",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "reference",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_callback",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "set_visible",
+          "arguments": [],
+          "description": "",
+          "returns": []
+        },
+        {
+          "alias": "update",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

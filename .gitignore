@@ -1,0 +1,4 @@
+*.md
+!/docs/for_developers/getting_started.md
+!/docs/for_developers/tips_and_tricks.md
+!/docs/for_users/common_issues_and_troubleshooting.md
