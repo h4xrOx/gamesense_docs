@@ -1,4 +1,5 @@
 {
+  "type": "LuaFunctionsTableArray",
   "MyArray": [
     {
       "alias": "_G",
@@ -6,37 +7,135 @@
         {
           "alias": "defer",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "vector",
-          "arguments": [],
-          "description": "",
-          "returns": []
+          "arguments": [
+            {
+              "alias": "nX",
+              "type": "number",
+              "optional": false,
+              "description": "x asix coordinate"
+            },
+            {
+              "alias": "nY",
+              "type": "number",
+              "optional": false,
+              "description": "y asix coordinate"
+            },
+            {
+              "alias": "nZ",
+              "type": "number",
+              "optional": false,
+              "description": "z asix coordinate"
+            }
+          ],
+          "returns": [
+            {
+              "type": "vector{}",
+              "description": "instance of vector object"
+            }
+          ],
+          "description": "creates a new vector object with given coordinates"
         },
         {
           "alias": "readfile",
-          "arguments": [],
-          "description": "",
-          "returns": []
+          "arguments": [
+            {
+              "alias": "sPath",
+              "type": "string",
+              "optional": false,
+              "description": "path to file relative to MOD directory, e.g. `...\\steamapps\\common\\Counter-Strike Global Offensive\\csgo`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "string",
+              "description": "contents of file"
+            }
+          ],
+          "description": "reads a file contents"
         },
         {
           "alias": "vtable_bind",
-          "arguments": [],
-          "description": "",
-          "returns": []
+          "arguments": [
+            {
+              "alias": "sModuleFileName",
+              "type": "string",
+              "optional": false,
+              "description": "a module filename, e.g. `engine.dll`"
+            },
+            {
+              "alias": "sInterfaceAlias",
+              "type": "string",
+              "optional": false,
+              "description": "a module's interface alias, e.g. `VEngineClient014`"
+            },
+            {
+              "alias": "nVTFI",
+              "type": "number",
+              "optional": false,
+              "description": "a virtual table function index inside the interface, e.g. for GetNetChannelInfo it's `78`"
+            },
+            {
+              "alias": "sTypeOf",
+              "type": "string",
+              "optional": false,
+              "description": "a function typeof to which the result pointer is casted, e.g. for GetNetChannelInfo it's `void*(__thiscall*)(void*)`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "cdata",
+              "description": "a C data object (a function pointer)"
+            }
+          ],
+          "description": "binds virtual function table method from module's interface to a callable cdata object (call it like the lua function). **Keep in mind that the first argument of `sTypeOf` must be a `void*` (a pointer to the interface)**"
         },
         {
           "alias": "vtable_thunk",
-          "arguments": [],
-          "description": "",
-          "returns": []
+          "arguments": [
+            {
+              "alias": "nVTFI",
+              "type": "number",
+              "optional": false,
+              "description": "a virtual table function index inside the interface, e.g. for GetLatency it's `9`"
+            },
+            {
+              "alias": "sTypeOf",
+              "type": "string",
+              "optional": false,
+              "description": "a function typeof to which the result pointer is casted, e.g. for GetLatency it's `float(__thiscall*)(void*, int)`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "cdata",
+              "description": "a C data object (a function pointer)"
+            }
+          ],
+          "description": "thunks virtual function table method from interface to a callable cdata object (call it like the lua function, but the first argument must be a pointer to the interface). **Keep in mind that the first argument of `sTypeOf` must be a `void*` (a pointer to the interface)**"
         },
         {
           "alias": "writefile",
-          "arguments": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sPath",
+              "type": "string",
+              "optional": false,
+              "description": "path to file relative to MOD directory, e.g. `...\\steamapps\\common\\Counter-Strike Global Offensive\\csgo`"
+            },
+            {
+              "alias": "sData",
+              "type": "string",
+              "optional": false,
+              "description": "contents to write"
+            }
+          ],
+          "returns": [],
+          "description": "writes contents to file"
         }
       ]
     },
@@ -49,16 +148,23 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": "value to shift"
             },
             {
               "alias": "n",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": "number of positions to shift"
             }
           ],
-          "description": "arithmetic right-shift of x by n bits",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "arithmetic right-shift of x by n bits"
         },
         {
           "alias": "band",
@@ -66,21 +172,29 @@
             {
               "alias": "x1",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "x2",
               "type": "number",
-              "optional": true
+              "optional": true,
+              "description": ""
             },
             {
               "alias": "...",
               "type": "variadic number",
-              "optional": true
+              "optional": true,
+              "description": ""
             }
           ],
-          "description": "bitwise and of x1, x2, ...",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "bitwise and of x1, x2, ..."
         },
         {
           "alias": "bnot",
@@ -88,11 +202,17 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             }
           ],
-          "description": "bitwise not of x",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "bitwise not of x"
         },
         {
           "alias": "bor",
@@ -100,21 +220,29 @@
             {
               "alias": "x1",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "x2",
               "type": "number",
-              "optional": true
+              "optional": true,
+              "description": ""
             },
             {
               "alias": "...",
               "type": "variadic number",
-              "optional": true
+              "optional": true,
+              "description": ""
             }
           ],
-          "description": "bitwise or of x1, x2, ...",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "bitwise or of x1, x2, ..."
         },
         {
           "alias": "bswap",
@@ -122,11 +250,17 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             }
           ],
-          "description": "byte-swap of x (little-endian <-> big-endian)",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "byte-swap of x (little-endian <-> big-endian)"
         },
         {
           "alias": "bxor",
@@ -134,21 +268,29 @@
             {
               "alias": "x1",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "x2",
               "type": "number",
-              "optional": true
+              "optional": true,
+              "description": ""
             },
             {
               "alias": "...",
               "type": "variadic number",
-              "optional": true
+              "optional": true,
+              "description": ""
             }
           ],
-          "description": "bitwise xor of x1, x2, ...",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "bitwise xor of x1, x2, ..."
         },
         {
           "alias": "lshift",
@@ -156,16 +298,23 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "n",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             }
           ],
-          "description": "left-shift of x by n bits",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "left-shift of x by n bits"
         },
         {
           "alias": "rol",
@@ -173,16 +322,23 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "n",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             }
           ],
-          "description": "left-rotate of x by n bits",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "left-rotate of x by n bits"
         },
         {
           "alias": "ror",
@@ -190,16 +346,23 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "n",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             }
           ],
-          "description": "right-rotate of x by n bits",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "right-rotate of x by n bits"
         },
         {
           "alias": "rshift",
@@ -207,16 +370,23 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "n",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             }
           ],
-          "description": "logical right-shift of x by n bits",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "logical right-shift of x by n bits"
         },
         {
           "alias": "tobit",
@@ -224,11 +394,17 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             }
           ],
-          "description": "normalize number to the numeric range of bit operations (all bit ops use this implicitly)",
-          "returns": []
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
+            }
+          ],
+          "description": "normalize number to the numeric range of bit operations (all bit ops use this implicitly)"
         },
         {
           "alias": "tohex",
@@ -236,12 +412,20 @@
             {
               "alias": "x",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
             },
             {
               "alias": "n",
               "type": "number",
-              "optional": false
+              "optional": false,
+              "description": ""
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "result"
             }
           ],
           "description": "convert x to hex with n digits (default 8)"
@@ -254,248 +438,248 @@
         {
           "alias": "camera_angles",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "camera_position",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "color_log",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "create_interface",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "delay_call",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_circle",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_circle_outline",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_debug_text",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_gradient",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_hitboxes",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_indicator",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_line",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_rectangle",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "draw_text",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "error_log",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "exec",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "eye_position",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "find_signature",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_cvar",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_model_name",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "key_state",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "latency",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "log",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "random_float",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "random_int",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "register_esp_flag",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "reload_active_scripts",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "scale_damage",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "screen_size",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_clan_tag",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_cvar",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_event_callback",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "system_time",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "timestamp",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "trace_bullet",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "trace_line",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "unix_time",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "unset_event_callback",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "update_player_list",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "userid_to_entindex",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "visible",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "world_to_screen",
@@ -510,14 +694,14 @@
         {
           "alias": "export",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "import",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "load",
@@ -532,56 +716,56 @@
         {
           "alias": "get_float",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_int",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_string",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "invoke_callback",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_float",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_int",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_raw_float",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_raw_int",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_string",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         }
       ]
     },
@@ -591,14 +775,14 @@
         {
           "alias": "flush",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "read",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "write",
@@ -613,104 +797,104 @@
         {
           "alias": "get_all",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_bounding_box",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_classname",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_esp_data",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_game_rules",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_local_player",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_origin",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_player_name",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_player_resource",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_player_weapon",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_players",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_prop",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_steam64",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "hitbox_position",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "is_alive",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "is_dormant",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "is_enemy",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_prop",
@@ -725,74 +909,74 @@
         {
           "alias": "absoluteframetime",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "chokedcommands",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "commandack",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "curtime",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "framecount",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "frametime",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "lastoutgoingcommand",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "mapname",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "maxplayers",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "oldcommandack",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "realtime",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "tickcount",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "tickinterval",
@@ -807,44 +991,44 @@
         {
           "alias": "decode_invalid_numbers",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "decode_max_depth",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "encode_invalid_numbers",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "encode_max_depth",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "encode_number_precision",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "encode_sparse_array",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "parse",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "stringify",
@@ -859,38 +1043,38 @@
         {
           "alias": "arms_material",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "chams_material",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "find_material",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "find_materials",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "find_texture",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_model_materials",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "override_material",
@@ -905,38 +1089,38 @@
         {
           "alias": "alpha_modulate",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "color_modulate",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_material_var_flag",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "get_shader_param",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "reload",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_material_var_flag",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_shader_param",
@@ -951,92 +1135,92 @@
         {
           "alias": "abi",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "alignof",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "cast",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "cdef",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "copy",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "errno",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "fill",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "gc",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "istype",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "metatype",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "offsetof",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "sizeof",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "string",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "typeinfo",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "typeof",
@@ -1051,104 +1235,104 @@
         {
           "alias": "init",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "init_from_angles",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "scale",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "scaled",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "normalize",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "normalized",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "length2d",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "length2dsqr",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "length",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "lengthsqr",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "lerp",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "dot",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "dist",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "dist2d",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "cross",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "angles",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "vectors",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "to",
@@ -1163,8 +1347,8 @@
         {
           "alias": "loadstring",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "open",
@@ -1179,8 +1363,8 @@
         {
           "alias": "get",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set",
@@ -1195,86 +1379,86 @@
         {
           "alias": "circle",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "circle_outline",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "gradient",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "indicator",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "line",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "load_jpg",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "load_png",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "load_rgba",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "load_svg",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "measure_text",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "rectangle",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "text",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "texture",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "triangle",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "world_to_screen",
@@ -1289,128 +1473,128 @@
         {
           "alias": "get",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "is_menu_open",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "menu_position",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "menu_size",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "mouse_position",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "name",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_button",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_checkbox",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_color_picker",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_combobox",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_hotkey",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_label",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_listbox",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_multiselect",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_slider",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_string",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "new_textbox",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "reference",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_callback",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "set_visible",
           "arguments": [],
-          "description": "",
-          "returns": []
+          "returns": [],
+          "description": ""
         },
         {
           "alias": "update",
