@@ -12,3 +12,4 @@ D:\Git\gamesense_docs\GenDoc\GenDoc\obj\Debug\netcoreapp3.1\GenDocAPIs.csproj.Co
 D:\Git\gamesense_docs\GenDoc\GenDoc\obj\Debug\netcoreapp3.1\GenDocAPIs.dll
 D:\Git\gamesense_docs\GenDoc\GenDoc\obj\Debug\netcoreapp3.1\GenDocAPIs.pdb
 D:\Git\gamesense_docs\GenDoc\GenDoc\obj\Debug\netcoreapp3.1\GenDocAPIs.genruntimeconfig.cache
+D:\Git\gamesense_docs\GenDoc\GenDoc\obj\Debug\netcoreapp3.1\GenDocAPIs.csprojAssemblyReference.cache

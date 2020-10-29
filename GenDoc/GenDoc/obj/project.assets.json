@@ -57,9 +57,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Git\\gamesense_docs\\GenDoc\\GenDoc\\GenDocAPIs.csproj",
-      "projectName": "GenDocAPIs",
-      "projectPath": "D:\\Git\\gamesense_docs\\GenDoc\\GenDoc\\GenDocAPIs.csproj",
+      "projectUniqueName": "D:\\Git\\gamesense_docs\\GenDoc\\GenDoc\\GenDoc.csproj",
+      "projectName": "GenDoc",
+      "projectPath": "D:\\Git\\gamesense_docs\\GenDoc\\GenDoc\\GenDoc.csproj",
       "packagesPath": "C:\\Users\\w7rus\\.nuget\\packages\\",
       "outputPath": "D:\\Git\\gamesense_docs\\GenDoc\\GenDoc\\obj\\",
       "projectStyle": "PackageReference",
