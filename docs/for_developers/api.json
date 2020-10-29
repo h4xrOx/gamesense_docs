@@ -146,13 +146,13 @@
           "alias": "arshift",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
               "description": "value to shift"
             },
             {
-              "alias": "n",
+              "alias": "nPositions",
               "type": "number",
               "optional": false,
               "description": "number of positions to shift"
@@ -161,247 +161,247 @@
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "arithmetic right-shift of x by n bits"
+          "description": "arithmetic right-shift by bits of value"
         },
         {
           "alias": "band",
           "arguments": [
             {
-              "alias": "x1",
+              "alias": "nValue1",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value for bitwise and"
             },
             {
-              "alias": "x2",
+              "alias": "nValue2",
               "type": "number",
               "optional": true,
-              "description": ""
+              "description": "value for bitwise and"
             },
             {
               "alias": "...",
               "type": "variadic number",
               "optional": true,
-              "description": ""
+              "description": "values for bitwise and"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "bitwise and of x1, x2, ..."
+          "description": "bitwise and of values"
         },
         {
           "alias": "bnot",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value for bitwise not"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "bitwise not of x"
+          "description": "bitwise not of value"
         },
         {
           "alias": "bor",
           "arguments": [
             {
-              "alias": "x1",
+              "alias": "nValue1",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value for bitwise or"
             },
             {
-              "alias": "x2",
+              "alias": "nValue2",
               "type": "number",
               "optional": true,
-              "description": ""
+              "description": "value for bitwise or"
             },
             {
               "alias": "...",
               "type": "variadic number",
               "optional": true,
-              "description": ""
+              "description": "values for bitwise or"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "bitwise or of x1, x2, ..."
+          "description": "bitwise or of values"
         },
         {
           "alias": "bswap",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value for byte swap"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "byte-swap of x (little-endian <-> big-endian)"
+          "description": "byte-swap of value (little-endian <-> big-endian)"
         },
         {
           "alias": "bxor",
           "arguments": [
             {
-              "alias": "x1",
+              "alias": "nValue1",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value for bitwise xor"
             },
             {
-              "alias": "x2",
+              "alias": "nValue2",
               "type": "number",
               "optional": true,
-              "description": ""
+              "description": "value for bitwise xor"
             },
             {
               "alias": "...",
               "type": "variadic number",
               "optional": true,
-              "description": ""
+              "description": "value sfor bitwise xor"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "bitwise xor of x1, x2, ..."
+          "description": "bitwise xor of values"
         },
         {
           "alias": "lshift",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value to shift"
             },
             {
-              "alias": "n",
+              "alias": "nPositions",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "number of positions to shift"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "left-shift of x by n bits"
+          "description": "logical left-shift by bits of value"
         },
         {
           "alias": "rol",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value to rotate"
             },
             {
-              "alias": "n",
+              "alias": "nPositions",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "number of positions to rotate"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "left-rotate of x by n bits"
+          "description": "left-rotate by bits of value"
         },
         {
           "alias": "ror",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value to rotate"
             },
             {
-              "alias": "n",
+              "alias": "nPositions",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "number of positions to rotate"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "right-rotate of x by n bits"
+          "description": "right-rotate by bits of value"
         },
         {
           "alias": "rshift",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value to shift"
             },
             {
-              "alias": "n",
+              "alias": "nPositions",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "number of positions to shift"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
-          "description": "logical right-shift of x by n bits"
+          "description": "logical left-shift by bits of value"
         },
         {
           "alias": "tobit",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value to normalize"
             }
           ],
           "returns": [
             {
               "type": "number",
-              "description": "result"
+              "description": "-"
             }
           ],
           "description": "normalize number to the numeric range of bit operations (all bit ops use this implicitly)"
@@ -410,25 +410,25 @@
           "alias": "tohex",
           "arguments": [
             {
-              "alias": "x",
+              "alias": "nValue",
               "type": "number",
               "optional": false,
-              "description": ""
+              "description": "value to format"
             },
             {
               "alias": "n",
               "type": "number",
-              "optional": false,
-              "description": ""
+              "optional": true,
+              "description": "amount of hex digits (default is 8)"
             }
           ],
           "returns": [
             {
-              "type": "number",
+              "type": "string",
               "description": "result"
             }
           ],
-          "description": "convert x to hex with n digits (default 8)"
+          "description": "format value as hex with digit limit"
         }
       ]
     },
