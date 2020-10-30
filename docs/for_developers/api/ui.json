@@ -37,11 +37,11 @@
           "returns": [
             {
               "type": "number",
-              "description": "x axis coordinate of menu"
+              "description": "x asix coordinate of menu"
             },
             {
               "type": "number",
-              "description": "y axis coordinate of menu"
+              "description": "y asix coordinate of menu"
             }
           ],
           "description": "returns position of the menu as 2 values"
@@ -65,11 +65,11 @@
           "returns": [
             {
               "type": "number",
-              "description": "x axis coordinate of menu"
+              "description": "x asix coordinate of menu"
             },
             {
               "type": "number",
-              "description": "y axis coordinate of menu"
+              "description": "y asix coordinate of menu"
             }
           ],
           "description": "returns position of the menu as 2 values"
@@ -177,25 +177,25 @@
               "alias": "nR",
               "type": "number",
               "optional": true,
-              "description": "value of red channel (0 - 255)"
+              "description": "red color channel (0 - 255)"
             },
             {
               "alias": "nG",
               "type": "number",
               "optional": true,
-              "description": "value of green channel (0 - 255)"
+              "description": "green color channel (0 - 255)"
             },
             {
               "alias": "nB",
               "type": "number",
               "optional": true,
-              "description": "value of blue channel (0 - 255)"
+              "description": "blue color channel (0 - 255)"
             },
             {
               "alias": "nA",
               "type": "number",
               "optional": true,
-              "description": "value of alpha channel (0 - 255)"
+              "description": "alpha channel value (0 - 255)"
             }
           ],
           "returns": [

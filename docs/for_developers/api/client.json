@@ -6,87 +6,293 @@
       "functions": [
         {
           "alias": "camera_angles",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "pitch in degrees"
+            },
+            {
+              "type": "number",
+              "description": "yaw in degrees"
+            }
+          ],
+          "description": "Gets camera world angles"
+        },
+        {
+          "alias": "camera_angles",
+          "arguments": [
+            {
+              "alias": "nPitch",
+              "type": "number",
+              "optional": false,
+              "description": "pitch in degrees"
+            },
+            {
+              "alias": "nYaw",
+              "type": "number",
+              "optional": false,
+              "description": "yaw in degrees"
+            }
+          ],
+          "description": "Sets camera world angles to values provided"
         },
         {
           "alias": "camera_position",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "x asix coordinate"
+            },
+            {
+              "type": "number",
+              "description": "y asix coordinate"
+            },
+            {
+              "type": "number",
+              "description": "z asix coordinate"
+            }
+          ],
+          "description": "Gets camera world position coordinates"
         },
         {
           "alias": "color_log",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nR",
+              "type": "number",
+              "optional": false,
+              "description": "red color channel (0 - 255)"
+            },
+            {
+              "alias": "nG",
+              "type": "number",
+              "optional": false,
+              "description": "green color channel (0 - 255)"
+            },
+            {
+              "alias": "nB",
+              "type": "number",
+              "optional": false,
+              "description": "blue color channel (0 - 255)"
+            },
+            {
+              "alias": "sMessage",
+              "type": "string",
+              "optional": false,
+              "description": "message to log"
+            },
+            {
+              "alias": "...",
+              "type": "variadic string",
+              "optional": true,
+              "description": "messages to log"
+            }
+          ],
+          "description": "Logs message(s) with provided color into game console"
         },
         {
           "alias": "create_interface",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sModuleFileName",
+              "type": "string",
+              "optional": false,
+              "description": "a module filename, e.g. `engine.dll`"
+            },
+            {
+              "alias": "sInterfaceAlias",
+              "type": "string",
+              "optional": false,
+              "description": "a module's interface alias, e.g. `VEngineClient014`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "cdata",
+              "description": "a C data object (a void pointer)"
+            }
+          ],
+          "description": "returns pointer of the module's interface"
         },
         {
           "alias": "delay_call",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nDelay",
+              "type": "number",
+              "optional": false,
+              "description": "delay in seconds"
+            },
+            {
+              "alias": "fnCallback",
+              "type": "function",
+              "optional": false,
+              "description": "a function that will be called"
+            }
+          ],
+          "description": "Binds function that will be called after specified delay"
         },
         {
           "alias": "draw_circle",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.circle`"
         },
         {
           "alias": "draw_circle_outline",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.circle_outline`"
         },
         {
           "alias": "draw_debug_text",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nX",
+              "type": "number",
+              "optional": false,
+              "description": "x asix coordinate"
+            },
+            {
+              "alias": "nY",
+              "type": "number",
+              "optional": false,
+              "description": "y asix coordinate"
+            },
+            {
+              "alias": "nZ",
+              "type": "number",
+              "optional": false,
+              "description": "z asix coordinate"
+            },
+            {
+              "alias": "nLineOffset",
+              "type": "number",
+              "optional": false,
+              "description": "line offset (0 for first line)"
+            },
+            {
+              "alias": "nDuration",
+              "type": "number",
+              "optional": false,
+              "description": "time in seconds to keep rendering of the text"
+            },
+            {
+              "alias": "nR",
+              "type": "number",
+              "optional": false,
+              "description": "red color channel (0 - 255)"
+            },
+            {
+              "alias": "nG",
+              "type": "number",
+              "optional": true,
+              "description": "green color channel (0 - 255)"
+            },
+            {
+              "alias": "nB",
+              "type": "number",
+              "optional": true,
+              "description": "blue color channel (0 - 255)"
+            },
+            {
+              "alias": "nA",
+              "type": "number",
+              "optional": true,
+              "description": "alpha channel (0 - 255)"
+            },
+            {
+              "alias": "...",
+              "type": "variadic string",
+              "optional": true,
+              "description": "text to draw"
+            }
+          ],
+          "description": "Draws text with provided color for required amount of time. **Keep in mind that it's better not to call this frequently**"
         },
         {
           "alias": "draw_gradient",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.gradient`"
         },
         {
           "alias": "draw_hitboxes",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nEntityIndex",
+              "type": "number",
+              "optional": false,
+              "description": "entity index"
+            },
+            {
+              "alias": "nDuration",
+              "type": "number",
+              "optional": false,
+              "description": "Time in seconds to keep rendering"
+            },
+            {
+              "alias": "hitboxes",
+              "type": "number / {number, ...}",
+              "optional": false,
+              "description": "hitbox index or table of hitbox indices, or 19 for all hitboxes"
+            },
+            {
+              "alias": "nR",
+              "type": "number",
+              "optional": false,
+              "description": "red color channel (0 - 255)"
+            },
+            {
+              "alias": "nG",
+              "type": "number",
+              "optional": false,
+              "description": "green color channel (0 - 255)"
+            },
+            {
+              "alias": "nB",
+              "type": "number",
+              "optional": false,
+              "description": "blue color channel (0 - 255)"
+            },
+            {
+              "alias": "nA",
+              "type": "number",
+              "optional": false,
+              "description": "alpha channel (0 - 255)"
+            },
+            {
+              "alias": "nTick",
+              "type": "number",
+              "optional": true,
+              "description": "server tick"
+            }
+          ],
+          "description": "Draws hitbox capsule(s) with provided color for required amount of time and selected tick. **Keep in mind that it's better not to call this frequently**"
         },
         {
           "alias": "draw_indicator",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.indicator`"
         },
         {
           "alias": "draw_line",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.line`"
         },
         {
           "alias": "draw_rectangle",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.rectangle`"
         },
         {
           "alias": "draw_text",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.text`"
         },
         {
           "alias": "error_log",
@@ -116,7 +322,7 @@
           "alias": "get_cvar",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `cvar{}:get<_raw/>_<int/float/string>`"
         },
         {
           "alias": "get_model_name",
@@ -188,7 +394,7 @@
           "alias": "set_cvar",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(obsolete) use `cvar{}:set<_raw/>_<int/float/string>`"
         },
         {
           "alias": "set_event_callback",
@@ -248,12 +454,12 @@
           "alias": "visible",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(buggy)"
         },
         {
           "alias": "world_to_screen",
           "arguments": [],
-          "description": ""
+          "description": "(obsolete) use `renderer.world_to_screen`"
         }
       ]
     }
