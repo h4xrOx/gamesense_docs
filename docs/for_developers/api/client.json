@@ -1,0 +1,261 @@
+{
+  "type": "LuaFunctionsTableArray",
+  "MyArray": [
+    {
+      "alias": "client",
+      "functions": [
+        {
+          "alias": "camera_angles",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "camera_position",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "color_log",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "create_interface",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "delay_call",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_circle",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_circle_outline",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_debug_text",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_gradient",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_hitboxes",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_indicator",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_line",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_rectangle",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "draw_text",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "error_log",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "exec",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "eye_position",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "find_signature",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "get_cvar",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "get_model_name",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "key_state",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "latency",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "log",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "random_float",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "random_int",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "register_esp_flag",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "reload_active_scripts",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "scale_damage",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "screen_size",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "set_clan_tag",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "set_cvar",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "set_event_callback",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "system_time",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "timestamp",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "trace_bullet",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "trace_line",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "unix_time",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "unset_event_callback",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "update_player_list",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "userid_to_entindex",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "visible",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "world_to_screen",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

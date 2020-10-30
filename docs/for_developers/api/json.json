@@ -1,0 +1,57 @@
+{
+  "type": "LuaFunctionsTableArray",
+  "MyArray": [
+    {
+      "alias": "json",
+      "functions": [
+        {
+          "alias": "decode_invalid_numbers",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "decode_max_depth",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "encode_invalid_numbers",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "encode_max_depth",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "encode_number_precision",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "encode_sparse_array",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "parse",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "stringify",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

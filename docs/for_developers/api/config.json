@@ -1,0 +1,27 @@
+{
+  "type": "LuaFunctionsTableArray",
+  "MyArray": [
+    {
+      "alias": "config",
+      "functions": [
+        {
+          "alias": "export",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "import",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "load",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

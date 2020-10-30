@@ -1,0 +1,626 @@
+{
+  "type": "LuaFunctionsTableArray",
+  "MyArray": [
+    {
+      "alias": "ui",
+      "functions": [
+        {
+          "alias": "get",
+          "arguments": [
+            {
+              "alias": "nUiElementReference",
+              "type": "number",
+              "optional": false,
+              "description": "a ui element reference to get value of"
+            }
+          ],
+          "returns": [
+            {
+              "type": "any",
+              "description": "value of ui element (ui element specific type)"
+            }
+          ],
+          "description": "Gets the value of referenced ui element"
+        },
+        {
+          "alias": "is_menu_open",
+          "returns": [
+            {
+              "type": "boolean",
+              "description": "-"
+            }
+          ],
+          "description": "returns whether cheat menu is open"
+        },
+        {
+          "alias": "menu_position",
+          "returns": [
+            {
+              "type": "number",
+              "description": "x axis coordinate of menu"
+            },
+            {
+              "type": "number",
+              "description": "y axis coordinate of menu"
+            }
+          ],
+          "description": "returns position of the menu as 2 values"
+        },
+        {
+          "alias": "menu_size",
+          "returns": [
+            {
+              "type": "number",
+              "description": "width of menu"
+            },
+            {
+              "type": "number",
+              "description": "height of menu"
+            }
+          ],
+          "description": "returns dimensions of the menu as 2 values"
+        },
+        {
+          "alias": "mouse_position",
+          "returns": [
+            {
+              "type": "number",
+              "description": "x axis coordinate of menu"
+            },
+            {
+              "type": "number",
+              "description": "y axis coordinate of menu"
+            }
+          ],
+          "description": "returns position of the menu as 2 values"
+        },
+        {
+          "alias": "name",
+          "arguments": [
+            {
+              "alias": "nUiElementReference",
+              "type": "number",
+              "optional": false,
+              "description": "a ui element reference to get value of"
+            }
+          ],
+          "returns": [
+            {
+              "type": "string",
+              "description": "alias of ui element"
+            }
+          ],
+          "description": "Gets the alias of referenced ui element"
+        },
+        {
+          "alias": "new_button",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_checkbox",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_color_picker",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            },
+            {
+              "alias": "nR",
+              "type": "number",
+              "optional": true,
+              "description": "value of red channel (0 - 255)"
+            },
+            {
+              "alias": "nG",
+              "type": "number",
+              "optional": true,
+              "description": "value of green channel (0 - 255)"
+            },
+            {
+              "alias": "nB",
+              "type": "number",
+              "optional": true,
+              "description": "value of blue channel (0 - 255)"
+            },
+            {
+              "alias": "nA",
+              "type": "number",
+              "optional": true,
+              "description": "value of alpha channel (0 - 255)"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_combobox",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            },
+            {
+              "alias": "...",
+              "type": "variadic string / table{string, ...}",
+              "optional": false,
+              "description": "values that will be added to combobox"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_hotkey",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            },
+            {
+              "alias": "bInline",
+              "type": "boolean",
+              "optional": true,
+              "description": "whether on not, the newly created ui element will be placed to the right of preceding ui element"
+            },
+            {
+              "alias": "nInitVK",
+              "type": "number",
+              "optional": true,
+              "description": "initial virtual key value"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_label",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure. **Keep in mind that reference of that ui element can be used only in `ui.set` and `ui.name`**"
+        },
+        {
+          "alias": "new_listbox",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            },
+            {
+              "alias": "tItems",
+              "type": "table{string, ...}",
+              "optional": false,
+              "description": "values that will be added to listbox"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_multiselect",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            },
+            {
+              "alias": "...",
+              "type": "variadic string / table{string, ...}",
+              "optional": false,
+              "description": "values that will be added to multiselect"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_slider",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            },
+            {
+              "alias": "nMin",
+              "type": "number",
+              "optional": false,
+              "description": "minimum value of slider (must be an integer)"
+            },
+            {
+              "alias": "nMax",
+              "type": "number",
+              "optional": false,
+              "description": "maximum value of slider (must be an integer)"
+            },
+            {
+              "alias": "nInit",
+              "type": "number",
+              "optional": true,
+              "description": "initial value of slider (must be an integer)"
+            },
+            {
+              "alias": "bShowTooltip",
+              "type": "boolean",
+              "optional": true,
+              "description": "whether or not to show current value of the slider"
+            },
+            {
+              "alias": "sUnit",
+              "type": "string",
+              "optional": true,
+              "description": "string to append to tooltip (max 3 symbols)"
+            },
+            {
+              "alias": "nScale",
+              "type": "number",
+              "optional": true,
+              "description": "multiplier for displayed value, e.g. slider with range of `0-10` and scale set to `0.1` would result in tooltip to display values within `0.0-1.0` range"
+            },
+            {
+              "alias": "tTooltops",
+              "type": "table{[nValue] = string, ...}",
+              "optional": true,
+              "description": "override tooltip for specified value"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure"
+        },
+        {
+          "alias": "new_string",
+          "arguments": [
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            },
+            {
+              "alias": "sValue",
+              "type": "string",
+              "optional": false,
+              "description": "initial value of element"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element. **This doesn't populate any ui elements visually**"
+        },
+        {
+          "alias": "new_textbox",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "a ui element reference"
+            }
+          ],
+          "description": "returns reference of a newly created ui element at specified location in menu structure. **Keep in mind that this element doesn't store it's value in configuration**"
+        },
+        {
+          "alias": "reference",
+          "arguments": [
+            {
+              "alias": "sTabAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab, e.g. `Visuals`"
+            },
+            {
+              "alias": "sContainerAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the cheat menu tab container, e.g. `Effects`"
+            },
+            {
+              "alias": "sUiElementAlias",
+              "type": "number",
+              "optional": false,
+              "description": "alias of the new element, e.g. `Force third person (alive)`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number, ...",
+              "description": "a ui element reference (multiple references if corresponding ui element contains inlined following ui elements)"
+            }
+          ],
+          "description": "returns a reference of a built-in ui element at specified location in menu structure. **Keep in mind that it's better not to call this more than once per enviroment**"
+        },
+        {
+          "alias": "set",
+          "arguments": [
+            {
+              "alias": "nUiElementReference",
+              "type": "number",
+              "optional": false,
+              "description": "a ui element reference to get value of"
+            },
+            {
+              "alias": "value",
+              "type": "any",
+              "optional": false,
+              "description": "value to set (ui element specific type)"
+            },
+            {
+              "alias": "...",
+              "type": "variadic any",
+              "optional": true,
+              "description": "values to set (ui element specific type)"
+            }
+          ],
+          "description": "Sets the value of referenced ui element"
+        },
+        {
+          "alias": "set_callback",
+          "arguments": [
+            {
+              "alias": "nUiElementReference",
+              "type": "number",
+              "optional": false,
+              "description": "a ui element reference to get value of"
+            },
+            {
+              "alias": "fnCallback",
+              "type": "function",
+              "optional": false,
+              "description": "a function that will be called on ui element action. **Reference to that ui element is passed to callback function as first argument**"
+            }
+          ],
+          "description": "Binds function that will be called on ui element action"
+        },
+        {
+          "alias": "set_visible",
+          "arguments": [
+            {
+              "alias": "nUiElementReference",
+              "type": "number",
+              "optional": false,
+              "description": "a ui element reference to get value of"
+            },
+            {
+              "alias": "bVisible",
+              "type": "boolean",
+              "optional": false,
+              "description": "whether on not the referenced ui element is visible in ui"
+            }
+          ],
+          "description": "Changes visibility of referenced ui element"
+        },
+        {
+          "alias": "update",
+          "arguments": [
+            {
+              "alias": "nUiElementReference",
+              "type": "number",
+              "optional": false,
+              "description": "a ui element reference to get value of"
+            },
+            {
+              "alias": "...",
+              "type": "any",
+              "optional": false,
+              "description": "values that will be overriden (ui element specific type)"
+            }
+          ],
+          "description": "Updates values of referenced ui element"
+        }
+      ]
+    }
+  ]
+}

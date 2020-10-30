@@ -1,0 +1,27 @@
+{
+  "type": "LuaFunctionsTableArray",
+  "MyArray": [
+    {
+      "alias": "database",
+      "functions": [
+        {
+          "alias": "flush",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "read",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "write",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    }
+  ]
+}

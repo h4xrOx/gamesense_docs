@@ -1,0 +1,143 @@
+{
+  "type": "LuaFunctionsTableArray",
+  "MyArray": [
+    {
+      "alias": "_G",
+      "functions": [
+        {
+          "alias": "defer",
+          "arguments": [],
+          "returns": [],
+          "description": "`shutdown` event (obsolete)"
+        },
+        {
+          "alias": "vector",
+          "arguments": [
+            {
+              "alias": "nX",
+              "type": "number",
+              "optional": false,
+              "description": "x asix coordinate"
+            },
+            {
+              "alias": "nY",
+              "type": "number",
+              "optional": false,
+              "description": "y asix coordinate"
+            },
+            {
+              "alias": "nZ",
+              "type": "number",
+              "optional": false,
+              "description": "z asix coordinate"
+            }
+          ],
+          "returns": [
+            {
+              "type": "vector{}",
+              "description": "instance of vector object"
+            }
+          ],
+          "description": "creates a new vector object with given coordinates"
+        },
+        {
+          "alias": "readfile",
+          "arguments": [
+            {
+              "alias": "sPath",
+              "type": "string",
+              "optional": false,
+              "description": "path to file relative to MOD directory, e.g. `...\\steamapps\\common\\Counter-Strike Global Offensive\\csgo`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "string",
+              "description": "contents of file"
+            }
+          ],
+          "description": "reads a file contents"
+        },
+        {
+          "alias": "vtable_bind",
+          "arguments": [
+            {
+              "alias": "sModuleFileName",
+              "type": "string",
+              "optional": false,
+              "description": "a module filename, e.g. `engine.dll`"
+            },
+            {
+              "alias": "sInterfaceAlias",
+              "type": "string",
+              "optional": false,
+              "description": "a module's interface alias, e.g. `VEngineClient014`"
+            },
+            {
+              "alias": "nVTFI",
+              "type": "number",
+              "optional": false,
+              "description": "a virtual table function index inside the interface, e.g. for GetNetChannelInfo it's `78`"
+            },
+            {
+              "alias": "sTypeOf",
+              "type": "string",
+              "optional": false,
+              "description": "a function typeof to which the result pointer is casted, e.g. for GetNetChannelInfo it's `void*(__thiscall*)(void*)`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "cdata",
+              "description": "a C data object (a function pointer)"
+            }
+          ],
+          "description": "binds virtual function table method from module's interface to a callable cdata object (call it like the lua function). **Keep in mind that the first argument of `sTypeOf` must be a `void*` (a pointer to the interface)**"
+        },
+        {
+          "alias": "vtable_thunk",
+          "arguments": [
+            {
+              "alias": "nVTFI",
+              "type": "number",
+              "optional": false,
+              "description": "a virtual table function index inside the interface, e.g. for GetLatency it's `9`"
+            },
+            {
+              "alias": "sTypeOf",
+              "type": "string",
+              "optional": false,
+              "description": "a function typeof to which the result pointer is casted, e.g. for GetLatency it's `float(__thiscall*)(void*, int)`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "cdata",
+              "description": "a C data object (a function pointer)"
+            }
+          ],
+          "description": "thunks virtual function table method from interface to a callable cdata object (call it like the lua function, but the first argument must be a pointer to the interface). **Keep in mind that the first argument of `sTypeOf` must be a `void*` (a pointer to the interface)**"
+        },
+        {
+          "alias": "writefile",
+          "arguments": [
+            {
+              "alias": "sPath",
+              "type": "string",
+              "optional": false,
+              "description": "path to file relative to MOD directory, e.g. `...\\steamapps\\common\\Counter-Strike Global Offensive\\csgo`"
+            },
+            {
+              "alias": "sData",
+              "type": "string",
+              "optional": false,
+              "description": "contents to write"
+            }
+          ],
+          "returns": [],
+          "description": "writes contents to file"
+        }
+      ]
+    }
+  ]
+}

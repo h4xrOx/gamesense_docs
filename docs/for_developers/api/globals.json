@@ -1,0 +1,87 @@
+{
+  "type": "LuaFunctionsTableArray",
+  "MyArray": [
+    {
+      "alias": "globals",
+      "functions": [
+        {
+          "alias": "absoluteframetime",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "chokedcommands",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "commandack",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "curtime",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "framecount",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "frametime",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "lastoutgoingcommand",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "mapname",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "maxplayers",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "oldcommandack",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "realtime",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "tickcount",
+          "arguments": [],
+          "returns": [],
+          "description": ""
+        },
+        {
+          "alias": "tickinterval",
+          "arguments": [],
+          "description": ""
+        }
+      ]
+    }
+  ]
+}
