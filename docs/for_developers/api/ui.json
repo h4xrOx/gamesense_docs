@@ -20,7 +20,7 @@
               "description": "value of ui element (ui element specific type)"
             }
           ],
-          "description": "Gets the value of referenced ui element"
+          "description": "returns the value of referenced ui element"
         },
         {
           "alias": "is_menu_open",
@@ -37,25 +37,25 @@
           "returns": [
             {
               "type": "number",
-              "description": "x asix coordinate of menu"
+              "description": "x asix coordinate [px]"
             },
             {
               "type": "number",
-              "description": "y asix coordinate of menu"
+              "description": "y asix coordinate [px]"
             }
           ],
-          "description": "returns position of the menu as 2 values"
+          "description": "returns position of the menu as 2 values from top left of game's viewport"
         },
         {
           "alias": "menu_size",
           "returns": [
             {
               "type": "number",
-              "description": "width of menu"
+              "description": "width [px]"
             },
             {
               "type": "number",
-              "description": "height of menu"
+              "description": "height [px]"
             }
           ],
           "description": "returns dimensions of the menu as 2 values"
@@ -65,11 +65,11 @@
           "returns": [
             {
               "type": "number",
-              "description": "x asix coordinate of menu"
+              "description": "x asix coordinate [px]"
             },
             {
               "type": "number",
-              "description": "y asix coordinate of menu"
+              "description": "y asix coordinate [px]"
             }
           ],
           "description": "returns position of the menu as 2 values"
@@ -90,7 +90,7 @@
               "description": "alias of ui element"
             }
           ],
-          "description": "Gets the alias of referenced ui element"
+          "description": "returns the alias of referenced ui element"
         },
         {
           "alias": "new_button",
@@ -177,25 +177,25 @@
               "alias": "nR",
               "type": "number",
               "optional": true,
-              "description": "red color channel (0 - 255)"
+              "description": "red color channel [0-255]"
             },
             {
               "alias": "nG",
               "type": "number",
               "optional": true,
-              "description": "green color channel (0 - 255)"
+              "description": "green color channel [0-255]"
             },
             {
               "alias": "nB",
               "type": "number",
               "optional": true,
-              "description": "blue color channel (0 - 255)"
+              "description": "blue color channel [0-255]"
             },
             {
               "alias": "nA",
               "type": "number",
               "optional": true,
-              "description": "alpha channel value (0 - 255)"
+              "description": "alpha channel value [0-255]"
             }
           ],
           "returns": [
@@ -564,7 +564,7 @@
               "description": "values to set (ui element specific type)"
             }
           ],
-          "description": "Sets the value of referenced ui element"
+          "description": "sets the value of referenced ui element"
         },
         {
           "alias": "set_callback",
@@ -582,7 +582,7 @@
               "description": "a function that will be called on ui element action. **Reference to that ui element is passed to callback function as first argument**"
             }
           ],
-          "description": "Binds function that will be called on ui element action"
+          "description": "binds function that will be called on ui element action"
         },
         {
           "alias": "set_visible",
@@ -600,7 +600,7 @@
               "description": "whether on not the referenced ui element is visible in ui"
             }
           ],
-          "description": "Changes visibility of referenced ui element"
+          "description": "sets visibility of referenced ui element"
         },
         {
           "alias": "update",
@@ -618,7 +618,7 @@
               "description": "values that will be overriden (ui element specific type)"
             }
           ],
-          "description": "Updates values of referenced ui element"
+          "description": "updates values of referenced ui element"
         }
       ]
     }

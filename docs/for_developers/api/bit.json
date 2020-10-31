@@ -26,7 +26,7 @@
               "description": "-"
             }
           ],
-          "description": "arithmetic right-shift by bits of value"
+          "description": "returns arithmetic right-shift by bits of value"
         },
         {
           "alias": "band",
@@ -56,7 +56,7 @@
               "description": "-"
             }
           ],
-          "description": "bitwise and of values"
+          "description": "returns bitwise and of values"
         },
         {
           "alias": "bnot",
@@ -74,7 +74,7 @@
               "description": "-"
             }
           ],
-          "description": "bitwise not of value"
+          "description": "returns bitwise not of value"
         },
         {
           "alias": "bor",
@@ -104,7 +104,7 @@
               "description": "-"
             }
           ],
-          "description": "bitwise or of values"
+          "description": "returns bitwise or of values"
         },
         {
           "alias": "bswap",
@@ -122,7 +122,7 @@
               "description": "-"
             }
           ],
-          "description": "byte-swap of value (little-endian <-> big-endian)"
+          "description": "returns byte-swap of value (little-endian <-> big-endian)"
         },
         {
           "alias": "bxor",
@@ -152,7 +152,7 @@
               "description": "-"
             }
           ],
-          "description": "bitwise xor of values"
+          "description": "returns bitwise xor of values"
         },
         {
           "alias": "lshift",
@@ -176,7 +176,7 @@
               "description": "-"
             }
           ],
-          "description": "logical left-shift by bits of value"
+          "description": "returns logical left-shift by bits of value"
         },
         {
           "alias": "rol",
@@ -200,7 +200,7 @@
               "description": "-"
             }
           ],
-          "description": "left-rotate by bits of value"
+          "description": "returns left-rotate by bits of value"
         },
         {
           "alias": "ror",
@@ -224,7 +224,7 @@
               "description": "-"
             }
           ],
-          "description": "right-rotate by bits of value"
+          "description": "returns right-rotate by bits of value"
         },
         {
           "alias": "rshift",
@@ -248,7 +248,7 @@
               "description": "-"
             }
           ],
-          "description": "logical left-shift by bits of value"
+          "description": "returns logical left-shift by bits of value"
         },
         {
           "alias": "tobit",
@@ -266,7 +266,7 @@
               "description": "-"
             }
           ],
-          "description": "normalize number to the numeric range of bit operations (all bit ops use this implicitly)"
+          "description": "returns normalized number to the numeric range of bit operations (all bit ops use this implicitly)"
         },
         {
           "alias": "tohex",
@@ -290,7 +290,7 @@
               "description": "result"
             }
           ],
-          "description": "format value as hex with digit limit"
+          "description": "returns format of value as hex with digit limit"
         }
       ]
     }

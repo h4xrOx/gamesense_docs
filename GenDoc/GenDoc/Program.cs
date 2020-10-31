@@ -143,9 +143,9 @@ namespace GenDoc
                                     {
                                         stringBuilder.Append(']');
                                     }
-
-                                    stringBuilder.Append(')');
                                 }
+
+                                stringBuilder.Append(')');
 
                                 /*
                                  * Write returns
@@ -193,8 +193,16 @@ namespace GenDoc
 
                                     foreach (var (value, i) in luaFunction.Returns.Select((value, i) => (value, i)))
                                     {
+                                        var positionalIndex = (i + 1) switch
+                                        {
+                                            1 => "1st",
+                                            2 => "2nd",
+                                            3 => "3rd",
+                                            _ => $"{i + 1}th"
+                                        };
+
                                         stringBuilder.AppendLine(
-                                            $"|{i + 1}|{value.Type}|{value.Description}|");
+                                            $"|{positionalIndex}|{value.Type}|{value.Description}|");
                                     }
 
                                     stringBuilder.Append("\n");

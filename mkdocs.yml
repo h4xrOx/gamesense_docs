@@ -16,7 +16,6 @@ nav:
   - For developers:
     - Getting Started:  ./for_developers/getting_started.md
     - API:
-      - "*":                ./for_developers/api.md
       - _G:               ./for_developers/api/_G.md
       - bit:              ./for_developers/api/bit.md
       - client:           ./for_developers/api/client.md

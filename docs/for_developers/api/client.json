@@ -9,14 +9,14 @@
           "returns": [
             {
               "type": "number",
-              "description": "pitch [degrees]"
+              "description": "pitch (degrees)"
             },
             {
               "type": "number",
-              "description": "yaw [degrees]"
+              "description": "yaw (degrees)"
             }
           ],
-          "description": "Gets camera world angles"
+          "description": "returns camera world angles"
         },
         {
           "alias": "camera_angles",
@@ -25,16 +25,16 @@
               "alias": "nPitch",
               "type": "number",
               "optional": false,
-              "description": "pitch [degrees]"
+              "description": "pitch (degrees)"
             },
             {
               "alias": "nYaw",
               "type": "number",
               "optional": false,
-              "description": "yaw [degrees]"
+              "description": "yaw (degrees)"
             }
           ],
-          "description": "Sets camera world angles to values provided"
+          "description": "sets camera world angles to values provided"
         },
         {
           "alias": "camera_position",
@@ -52,7 +52,7 @@
               "description": "z asix coordinate"
             }
           ],
-          "description": "Gets camera world position coordinates"
+          "description": "returns camera world position coordinates"
         },
         {
           "alias": "color_log",
@@ -61,19 +61,19 @@
               "alias": "nR",
               "type": "number",
               "optional": false,
-              "description": "red color channel (0 - 255)"
+              "description": "red color channel [0-255]"
             },
             {
               "alias": "nG",
               "type": "number",
               "optional": false,
-              "description": "green color channel (0 - 255)"
+              "description": "green color channel [0-255]"
             },
             {
               "alias": "nB",
               "type": "number",
               "optional": false,
-              "description": "blue color channel (0 - 255)"
+              "description": "blue color channel [0-255]"
             },
             {
               "alias": "sMessage",
@@ -121,7 +121,7 @@
               "alias": "nDelay",
               "type": "number",
               "optional": false,
-              "description": "delay in seconds"
+              "description": "delay (seconds)"
             },
             {
               "alias": "fnCallback",
@@ -130,7 +130,7 @@
               "description": "a function that will be called"
             }
           ],
-          "description": "Binds function that will be called after specified delay"
+          "description": "binds function that will be called after specified delay"
         },
         {
           "alias": "draw_circle",
@@ -175,31 +175,31 @@
               "alias": "nDuration",
               "type": "number",
               "optional": false,
-              "description": "time in seconds to keep rendering of the text"
+              "description": "time to keep rendering of the text (seconds)"
             },
             {
               "alias": "nR",
               "type": "number",
               "optional": false,
-              "description": "red color channel (0 - 255)"
+              "description": "red color channel [0-255]"
             },
             {
               "alias": "nG",
               "type": "number",
               "optional": true,
-              "description": "green color channel (0 - 255)"
+              "description": "green color channel [0-255]"
             },
             {
               "alias": "nB",
               "type": "number",
               "optional": true,
-              "description": "blue color channel (0 - 255)"
+              "description": "blue color channel [0-255]"
             },
             {
               "alias": "nA",
               "type": "number",
               "optional": true,
-              "description": "alpha channel (0 - 255)"
+              "description": "alpha channel [0-255]"
             },
             {
               "alias": "...",
@@ -208,7 +208,7 @@
               "description": "text to draw"
             }
           ],
-          "description": "Draws text with provided color for required amount of time. **Keep in mind that it's better not to call this frequently**"
+          "description": "draws text with provided color for required amount of time. **Keep in mind that it's better not to call this frequently**"
         },
         {
           "alias": "draw_gradient",
@@ -229,7 +229,7 @@
               "alias": "nDuration",
               "type": "number",
               "optional": false,
-              "description": "Time in seconds to keep rendering"
+              "description": "time to keep rendering (seconds)"
             },
             {
               "alias": "hitboxes",
@@ -241,25 +241,25 @@
               "alias": "nR",
               "type": "number",
               "optional": false,
-              "description": "red color channel (0 - 255)"
+              "description": "red color channel [0-255]"
             },
             {
               "alias": "nG",
               "type": "number",
               "optional": false,
-              "description": "green color channel (0 - 255)"
+              "description": "green color channel [0-255]"
             },
             {
               "alias": "nB",
               "type": "number",
               "optional": false,
-              "description": "blue color channel (0 - 255)"
+              "description": "blue color channel [0-255]"
             },
             {
               "alias": "nA",
               "type": "number",
               "optional": false,
-              "description": "alpha channel (0 - 255)"
+              "description": "alpha channel [0-255]"
             },
             {
               "alias": "nTick",
@@ -268,7 +268,7 @@
               "description": "server tick"
             }
           ],
-          "description": "Draws hitbox capsule(s) with provided color for required amount of time and selected tick. **Keep in mind that it's better not to call this frequently**"
+          "description": "draws hitbox capsule(s) with provided color for required amount of time and selected tick. **Keep in mind that it's better not to call this frequently**"
         },
         {
           "alias": "draw_indicator",
@@ -346,7 +346,7 @@
               "description": "z asix coordinate"
             }
           ],
-          "description": "Gets eye position of a local player entity"
+          "description": "returns eye position of a local player entity"
         },
         {
           "alias": "find_signature",
@@ -394,7 +394,7 @@
               "description": "a model name"
             }
           ],
-          "description": "Gets model name by provided model index"
+          "description": "returns model name by provided model index"
         },
         {
           "alias": "key_state",
@@ -409,7 +409,7 @@
           "returns": [
             {
               "type": "boolean",
-              "description": "result of virtual key being pressed"
+              "description": "-"
             }
           ],
           "description": "returns whether the key is pressed"
@@ -419,7 +419,7 @@
           "returns": [
             {
               "type": "number",
-              "description": "latency [seconds]"
+              "description": "latency (seconds)"
             }
           ],
           "description": "returns your latency in seconds"
@@ -461,7 +461,7 @@
           "returns": [
             {
               "type": "number",
-              "description": "-"
+              "description": "random float"
             }
           ],
           "description": "returns random float in range specified"
@@ -485,7 +485,7 @@
           "returns": [
             {
               "type": "number",
-              "description": "-"
+              "description": "random integer"
             }
           ],
           "description": "returns random integer in range specified"
@@ -503,19 +503,19 @@
               "alias": "nR",
               "type": "number",
               "optional": false,
-              "description": "red color channel (0 - 255)"
+              "description": "red color channel [0-255]"
             },
             {
               "alias": "nG",
               "type": "number",
               "optional": false,
-              "description": "green color channel (0 - 255)"
+              "description": "green color channel [0-255]"
             },
             {
               "alias": "nB",
               "type": "number",
               "optional": false,
-              "description": "blue color channel (0 - 255)"
+              "description": "blue color channel [0-255]"
             },
             {
               "alias": "fnCallback",
@@ -524,7 +524,7 @@
               "description": "a function that will be called on ui element action. **Entity index is passed to callback function as first argument**"
             }
           ],
-          "description": "Sets function that is called for each player entity while drawing the ESP. **Keep in mind that this function requires `Visuals > Player > Flags` feature being active**"
+          "description": "sets function that is called for each player entity while drawing the ESP. **Keep in mind that this function requires `Visuals > Player > Flags` feature being active**"
         },
         {
           "alias": "reload_active_scripts",
@@ -534,18 +534,18 @@
           "alias": "scale_damage",
           "arguments": [],
           "returns": [],
-          "description": "(buggy)"
+          "description": "(buggy) `client.trace_bullet` takes that into account"
         },
         {
           "alias": "screen_size",
           "returns": [
             {
               "type": "number",
-              "description": "width value"
+              "description": "width [px]"
             },
             {
               "type": "number",
-              "description": "height value"
+              "description": "height [px]"
             }
           ],
           "description": "returns dimensions of the game's viewport"
@@ -560,7 +560,7 @@
               "description": "text(s) to set as clantag (leave empty to remove clantag)"
             }
           ],
-          "description": "Sets clantag to the text(s) provided"
+          "description": "sets clantag to the text(s) provided"
         },
         {
           "alias": "set_cvar",
@@ -584,26 +584,26 @@
               "description": "a function that will be called when provided event is fired. **Event data is passed to callback function as first argument**"
             }
           ],
-          "description": "Sets function that is called when specified even is fired"
+          "description": "sets function that is called when specified even is fired"
         },
         {
           "alias": "system_time",
           "returns": [
             {
               "type": "number",
-              "description": "hours value"
+              "description": "hours [0-24]"
             },
             {
               "type": "number",
-              "description": "minutes value"
+              "description": "minutes [0-59]"
             },
             {
               "type": "number",
-              "description": "seconds value"
+              "description": "seconds [0-59]"
             },
             {
               "type": "number",
-              "description": "milliseconds value"
+              "description": "milliseconds [0-999]"
             }
           ],
           "description": "returns your local system time"
@@ -613,7 +613,7 @@
           "returns": [
             {
               "type": "number",
-              "description": "milliseconds value"
+              "description": "milliseconds"
             }
           ],
           "description": "returns high precision timestamp in milliseconds"
@@ -680,16 +680,16 @@
               "description": "damage that can be done with local player active weapon at traced world position"
             }
           ],
-          "description": "Traces damage from world position as selected entity's active weapon to another world position"
+          "description": "traces damage from world position via selected entity's active weapon to another world position"
         },
         {
           "alias": "trace_line",
           "arguments": [
             {
-              "alias": "nEntityIndex",
+              "alias": "nSkipEntityIndex",
               "type": "number",
               "optional": false,
-              "description": "entity index to trace from"
+              "description": "entity index to skip"
             },
             {
               "alias": "nFromX",
@@ -731,36 +731,36 @@
           "returns": [
             {
               "type": "number",
-              "description": "fraction that shows how far the trace went relative to distance between world positions (0.0 - 1.0)"
+              "description": "fraction that shows how far the trace went relative to distance between world positions [0.0-1.0]"
             },
             {
               "type": "number",
               "description": "entity index of entity that intersects trace"
             }
           ],
-          "description": "Traces visibility from world position to another world position"
+          "description": "traces visibility from world position to another world position"
         },
         {
           "alias": "unix_time",
           "returns": [
             {
               "type": "number",
-              "description": "hours value"
+              "description": "hours [0-24]"
             },
             {
               "type": "number",
-              "description": "minutes value"
+              "description": "minutes [0-59]"
             },
             {
               "type": "number",
-              "description": "seconds value"
+              "description": "seconds [0-59]"
             },
             {
               "type": "number",
-              "description": "milliseconds value"
+              "description": "milliseconds [0-999]"
             }
           ],
-          "description": "returns time since 00:00:00 01/01/1970"
+          "description": "returns time since `00:00:00 01/01/1970`"
         },
         {
           "alias": "unset_event_callback",
@@ -778,11 +778,11 @@
               "description": "a function for which to unset the provided event"
             }
           ],
-          "description": "Unsets function that have been called when specified even were fired"
+          "description": "unsets function that have been bound to provided event"
         },
         {
           "alias": "update_player_list",
-          "description": "Updates player list tab without having to open it"
+          "description": "updates player list tab without having to open it"
         },
         {
           "alias": "userid_to_entindex",
@@ -791,7 +791,7 @@
               "alias": "nUserId",
               "type": "number",
               "optional": false,
-              "description": "a userId that is given by some game events"
+              "description": "a userId that is given by some game events, e.g. `player_connect_full` (for more info check `For Developers > Events`)"
             }
           ],
           "returns": [
@@ -800,7 +800,7 @@
               "description": "entity index"
             }
           ],
-          "description": "returns entity index that is linked to provided userId"
+          "description": "returns entity index by provided userId"
         },
         {
           "alias": "visible",

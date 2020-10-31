@@ -11,13 +11,13 @@
               "alias": "nEntityIndex",
               "type": "number",
               "optional": false,
-              "description": "entity index of the player"
+              "description": "entity index (players only)"
             },
             {
-              "alias": "sUiFieldName",
+              "alias": "sUiAlias",
               "type": "string",
               "optional": false,
-              "description": "Name of the field inside player list, e.g. `Correction Active`"
+              "description": "alias of the ui element inside player list, e.g. `Correction Active`"
             }
           ],
           "returns": [
@@ -26,7 +26,7 @@
               "description": "value of ui element (ui element specific type)"
             }
           ],
-          "description": "Gets the value of corresponding ui element for specific player in playerlist tab"
+          "description": "returns the value of corresponding ui element for specific player in playerlist tab"
         },
         {
           "alias": "set",
@@ -35,13 +35,13 @@
               "alias": "nEntityIndex",
               "type": "number",
               "optional": false,
-              "description": "entity index of the player"
+              "description": "entity index (players only)"
             },
             {
-              "alias": "sUiFieldName",
+              "alias": "sUiAlias",
               "type": "string",
               "optional": false,
-              "description": "Name of the field inside player list, e.g. `Correction Active`"
+              "description": "alias of the ui element inside player list, e.g. `Correction Active`"
             },
             {
               "alias": "value",
@@ -50,7 +50,7 @@
               "description": "value to set (ui element specific type)"
             }
           ],
-          "description": "Sets the value to corresponding ui element for specific player in playerlist tab"
+          "description": "sets the value to corresponding ui element for specific player in playerlist tab"
         }
       ]
     }
