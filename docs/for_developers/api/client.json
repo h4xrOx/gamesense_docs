@@ -136,13 +136,35 @@
           "alias": "draw_circle",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `renderer.circle`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.circle` instead"
+            }
+          ]
         },
         {
           "alias": "draw_circle_outline",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `renderer.circle_outline`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.circle_outline` instead"
+            }
+          ]
         },
         {
           "alias": "draw_debug_text",
@@ -208,13 +230,31 @@
               "description": "text to draw"
             }
           ],
-          "description": "draws text with provided color for required amount of time. **Keep in mind that it's better not to call this frequently**"
+          "description": "draws text with provided color for required amount of time",
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "Avoid calling this function frequently"
+            }
+          ]
         },
         {
           "alias": "draw_gradient",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `renderer.gradient`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.gradient` instead"
+            }
+          ]
         },
         {
           "alias": "draw_hitboxes",
@@ -268,31 +308,82 @@
               "description": "server tick"
             }
           ],
-          "description": "draws hitbox capsule(s) with provided color for required amount of time and selected tick. **Keep in mind that it's better not to call this frequently**"
+          "description": "draws hitbox capsule(s) with provided color for required amount of time and selected tick",
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "Avoid calling this function frequently"
+            }
+          ]
         },
         {
           "alias": "draw_indicator",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `renderer.indicator`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.indicator` instead"
+            }
+          ]
         },
         {
           "alias": "draw_line",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `renderer.line`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.line` instead"
+            }
+          ]
         },
         {
           "alias": "draw_rectangle",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `renderer.rectangle`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.rectangle` instead"
+            }
+          ]
         },
         {
           "alias": "draw_text",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `renderer.text`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.text` instead"
+            }
+          ]
         },
         {
           "alias": "error_log",
@@ -319,16 +410,23 @@
               "alias": "sCommand",
               "type": "string",
               "optional": false,
-              "description": "command to execute (append `;` if passing more than one command)"
+              "description": "command to execute"
             },
             {
               "alias": "...",
               "type": "variadic string",
               "optional": true,
-              "description": "commands to execute (`;` separated)"
+              "description": "commands to execute"
             }
           ],
-          "description": "executes game console command(s)"
+          "description": "executes game console command(s)",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "If passing multiple console commands, append `;` to each, e.g. `client.exec(\"disconnect;\", \"quit\")`"
+            }
+          ]
         },
         {
           "alias": "eye_position",
@@ -361,7 +459,7 @@
               "alias": "sSignature",
               "type": "string",
               "optional": false,
-              "description": "a signature (as byte escape sequence, wildcard is `\\xCC`), e.g. `\\xB9\\xCC\\xCC\\xCC\\xCC\\x88\\x46\\x09`"
+              "description": "a signature, e.g. `\\xB9\\xCC\\xCC\\xCC\\xCC\\x88\\x46\\x09` (as byte escape sequence)"
             }
           ],
           "returns": [
@@ -370,13 +468,31 @@
               "description": "a C data object (a void pointer)"
             }
           ],
-          "description": "returns pointer at signature match start inside specified module"
+          "description": "returns pointer at signature match start inside specified module",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "Wildcard `? (IDA type)` for signatures is `\\xCC`"
+            }
+          ]
         },
         {
           "alias": "get_cvar",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `cvar{}:get<_raw/>_<int/float/string>`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `cvar{}:get<_raw/>_<int/float/string>` instead"
+            }
+          ]
         },
         {
           "alias": "get_model_name",
@@ -412,7 +528,14 @@
               "description": "-"
             }
           ],
-          "description": "returns whether the key is pressed"
+          "description": "returns whether the key is pressed",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "For more info about virtual key codes check [this article](https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes)"
+            }
+          ]
         },
         {
           "alias": "latency",
@@ -524,7 +647,14 @@
               "description": "a function that will be called on ui element action. **Entity index is passed to callback function as first argument**"
             }
           ],
-          "description": "sets function that is called for each player entity while drawing the ESP. **Keep in mind that this function requires `Visuals > Player > Flags` feature being active**"
+          "description": "sets function that is called for each player entity while drawing the ESP",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "This function requires `Visuals > Player > Flags` feature being active"
+            }
+          ]
         },
         {
           "alias": "reload_active_scripts",
@@ -566,7 +696,18 @@
           "alias": "set_cvar",
           "arguments": [],
           "returns": [],
-          "description": "(obsolete) use `cvar{}:set<_raw/>_<int/float/string>`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `cvar{}:set<_raw/>_<int/float/string>` instead"
+            }
+          ]
         },
         {
           "alias": "set_event_callback",
@@ -575,7 +716,7 @@
               "alias": "sEventAlias",
               "type": "string",
               "optional": false,
-              "description": "an event alias, e.g. `paint` or `player_connect_full` (game events and built-in cheat events, for more info check `For Developers > Events`)"
+              "description": "an event alias, e.g. `paint`, `player_connect_full` (game events and built-in cheat events)"
             },
             {
               "alias": "fnCallback",
@@ -584,7 +725,14 @@
               "description": "a function that will be called when provided event is fired. **Event data is passed to callback function as first argument**"
             }
           ],
-          "description": "sets function that is called when specified even is fired"
+          "description": "sets function that is called when specified even is fired",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "For more info about events check `For Developers > Events`"
+            }
+          ]
         },
         {
           "alias": "system_time",
@@ -769,7 +917,7 @@
               "alias": "sEventAlias",
               "type": "string",
               "optional": false,
-              "description": "an event alias, e.g. `paint` or `player_connect_full` (game events and built-in cheat events, for more info check `For Developers > Events`)"
+              "description": "an event alias, e.g. `paint`, `player_connect_full` (game events and built-in cheat events)"
             },
             {
               "alias": "fnCallback",
@@ -778,7 +926,14 @@
               "description": "a function for which to unset the provided event"
             }
           ],
-          "description": "unsets function that have been bound to provided event"
+          "description": "unsets function that have been bound to provided event",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "For more info about events check `For Developers > Events`"
+            }
+          ]
         },
         {
           "alias": "update_player_list",
@@ -791,7 +946,7 @@
               "alias": "nUserId",
               "type": "number",
               "optional": false,
-              "description": "a userId that is given by some game events, e.g. `player_connect_full` (for more info check `For Developers > Events`)"
+              "description": "a userId that is given by some game events, e.g. `player_connect_full`"
             }
           ],
           "returns": [
@@ -800,18 +955,47 @@
               "description": "entity index"
             }
           ],
-          "description": "returns entity index by provided userId"
+          "description": "returns entity index by provided userId",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "For more info about events check `For Developers > Events`"
+            }
+          ]
         },
         {
           "alias": "visible",
           "arguments": [],
           "returns": [],
-          "description": "(buggy)"
+          "admonitions": [
+            {
+              "type": "bug",
+              "title": "",
+              "data": "This function is buggy, and returns unreliable results"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `client.trace_line` instead"
+            }
+          ]
         },
         {
           "alias": "world_to_screen",
           "arguments": [],
-          "description": "(obsolete) use `renderer.world_to_screen`"
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "This function is deprecated, and it's only available for compatibility reasons"
+            },
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Use `renderer.world_to_screen` instead"
+            }
+          ]
         }
       ]
     }

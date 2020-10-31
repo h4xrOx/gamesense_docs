@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -13,6 +14,18 @@ namespace GenDoc
         LuaFunctionsTableArray,
         LuaEventsArray,
         LuaNetPropsTableArray,
+    }
+
+    public class Admonition
+    {
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
+        [JsonProperty("data")]
+        public string Data { get; set; }
     }
 
     public class LuaFunctionArgument
@@ -52,6 +65,9 @@ namespace GenDoc
 
         [JsonProperty("returns")]
         public List<LuaFunctionReturn> Returns { get; set; }
+
+        [JsonProperty("admonitions")]
+        public List<Admonition> Admonitions { get; set; }
     }
 
     public class LuaFunctionsTable
@@ -78,6 +94,27 @@ namespace GenDoc
         {
             return Path.Combine(Path.GetDirectoryName(path) ?? string.Empty, Path.GetFileNameWithoutExtension(path));
         }
+
+        public static List<string> GetFilesDeep(string root, string regex, int depth)
+        {
+            var files = new List<string>();
+
+            foreach (var directory in Directory.EnumerateDirectories(root))
+            {
+                if (depth > 0)
+                    files.AddRange(GetFilesDeep(directory, regex, depth - 1));
+            }
+
+            var filesFound = Directory.EnumerateFiles(root);
+
+            foreach (var fileFound in filesFound)
+            {
+                if (Regex.Match(fileFound, regex).Success)
+                    files.Add(fileFound);
+            }
+
+            return files;
+        }
     }
 
     internal static class GenDoc
@@ -103,6 +140,9 @@ namespace GenDoc
                             foreach (var luaFunction in luaFunctionsTable.Functions)
                             {
                                 stringBuilder.AppendLine($"### {luaFunction.Alias}\n");
+
+                                if (!string.IsNullOrEmpty(luaFunction.Description))
+                                    stringBuilder.AppendLine($"{luaFunction.Description}\n");
 
                                 stringBuilder.Append(
                                     $"`{luaFunctionsTable.Alias}{(luaFunctionsTable.Alias.Contains("{}") ? ":" : ".")}{luaFunction.Alias}(");
@@ -208,8 +248,21 @@ namespace GenDoc
                                     stringBuilder.Append("\n");
                                 }
 
-                                if (!string.IsNullOrEmpty(luaFunction.Description))
-                                    stringBuilder.AppendLine($"{luaFunction.Description}\n");
+                                /*
+                                 * Write admonitions
+                                 */
+
+                                if (luaFunction.Admonitions != null && luaFunction.Admonitions.Count > 0)
+                                {
+                                    foreach (var luaFunctionAdmonition in luaFunction.Admonitions)
+                                    {
+                                        stringBuilder.AppendLine($"!!! {luaFunctionAdmonition.Type} \"{luaFunctionAdmonition.Title}\"");
+
+                                        stringBuilder.AppendLine($"    {luaFunctionAdmonition.Data}");
+
+                                        stringBuilder.Append("\n");
+                                    }
+                                }
                             }
                         }
                     }
@@ -249,9 +302,9 @@ namespace GenDoc
     {
         private static void Main(string[] args)
         {
-            foreach (var s in args)
+            foreach (var filepath in Helper.GetFilesDeep(Path.Combine(Directory.GetCurrentDirectory(), args[0]), ".*\\.json$", 10))
             {
-                GenDoc.ForFile(s);
+                GenDoc.ForFile(filepath);
             }
         }
     }

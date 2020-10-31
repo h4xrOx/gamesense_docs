@@ -44,7 +44,7 @@
               "description": "y asix coordinate [px]"
             }
           ],
-          "description": "returns position of the menu as 2 values from top left of game's viewport"
+          "description": "returns position of the menu from top left of game's viewport"
         },
         {
           "alias": "menu_size",
@@ -58,7 +58,7 @@
               "description": "height [px]"
             }
           ],
-          "description": "returns dimensions of the menu as 2 values"
+          "description": "returns dimensions of the menu"
         },
         {
           "alias": "mouse_position",
@@ -72,7 +72,7 @@
               "description": "y asix coordinate [px]"
             }
           ],
-          "description": "returns position of the menu as 2 values"
+          "description": "returns position of the menu"
         },
         {
           "alias": "name",
@@ -312,7 +312,14 @@
               "description": "a ui element reference"
             }
           ],
-          "description": "returns reference of a newly created ui element at specified location in menu structure. **Keep in mind that reference of that ui element can be used only in `ui.set` and `ui.name`**"
+          "description": "returns reference of a newly created ui element at specified location in menu structure",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "Reference of that ui element can only be used in `ui.set` and `ui.name`"
+            }
+          ]
         },
         {
           "alias": "new_listbox",
@@ -480,7 +487,14 @@
               "description": "a ui element reference"
             }
           ],
-          "description": "returns reference of a newly created ui element. **This doesn't populate any ui elements visually**"
+          "description": "returns reference of a newly created ui element",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "No ui element is being populated visually"
+            }
+          ]
         },
         {
           "alias": "new_textbox",
@@ -510,7 +524,14 @@
               "description": "a ui element reference"
             }
           ],
-          "description": "returns reference of a newly created ui element at specified location in menu structure. **Keep in mind that this element doesn't store it's value in configuration**"
+          "description": "returns reference of a newly created ui element at specified location in menu structure",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "This ui element doesn't store it's value into configuration"
+            }
+          ]
         },
         {
           "alias": "reference",
@@ -540,7 +561,14 @@
               "description": "a ui element reference (multiple references if corresponding ui element contains inlined following ui elements)"
             }
           ],
-          "description": "returns a reference of a built-in ui element at specified location in menu structure. **Keep in mind that it's better not to call this more than once per enviroment**"
+          "description": "returns a reference of a built-in ui element at specified location in menu structure",
+          "admonitions": [
+            {
+              "type": "warning",
+              "title": "",
+              "data": "Avoid calling this function more than once per enviroment"
+            }
+          ]
         },
         {
           "alias": "set",
@@ -579,10 +607,17 @@
               "alias": "fnCallback",
               "type": "function",
               "optional": false,
-              "description": "a function that will be called on ui element action. **Reference to that ui element is passed to callback function as first argument**"
+              "description": "a function that will be called on ui element action"
             }
           ],
-          "description": "binds function that will be called on ui element action"
+          "description": "binds function that will be called on ui element action",
+          "admonitions": [
+            {
+              "type": "info",
+              "title": "",
+              "data": "Reference of bound ui element is passed to callback function as first argument"
+            }
+          ]
         },
         {
           "alias": "set_visible",
