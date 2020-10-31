@@ -42,14 +42,39 @@
         },
         {
           "alias": "parse",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sData",
+              "type": "string",
+              "optional": false,
+              "description": "inlined JSON to transform"
+            }
+          ],
+          "returns": [
+            {
+              "type": "table",
+              "description": "table representation of a JSON"
+            }
+          ],
+          "description": "returns table representation of a JSON"
         },
         {
           "alias": "stringify",
-          "arguments": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "tData",
+              "type": "table",
+              "optional": false,
+              "description": "table to transform"
+            }
+          ],
+          "returns": [
+            {
+              "type": "string",
+              "description": "inlined JSON"
+            }
+          ],
+          "description": "returns JSON representation of a table"
         }
       ]
     }

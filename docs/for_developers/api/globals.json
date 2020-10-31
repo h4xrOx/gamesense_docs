@@ -6,80 +6,133 @@
       "functions": [
         {
           "alias": "absoluteframetime",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "time (seconds)"
+            }
+          ],
+          "description": "returns time elapsed during last game frame"
         },
         {
           "alias": "chokedcommands",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "amount of commands"
+            }
+          ],
+          "description": "returns amount of commands that are being held back"
         },
         {
           "alias": "commandack",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "command number"
+            }
+          ],
+          "description": "returns last command number that the server acknowledged"
         },
         {
           "alias": "curtime",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "time (seconds)"
+            }
+          ],
+          "description": "returns server's game time"
         },
         {
           "alias": "framecount",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "amount of frames"
+            }
+          ],
+          "description": "returns total amount of frames drawn"
         },
         {
           "alias": "frametime",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "time (seconds)"
+            }
+          ],
+          "description": "returns time that took frame to render"
         },
         {
           "alias": "lastoutgoingcommand",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "command number"
+            }
+          ],
+          "description": "returns last command number that the client sent to server"
         },
         {
           "alias": "mapname",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "string",
+              "description": "current map name"
+            }
+          ],
+          "description": "returns current map name that the server has"
         },
         {
           "alias": "maxplayers",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "max amount of players"
+            }
+          ],
+          "description": "returns max amount of players that the server allows"
         },
         {
           "alias": "oldcommandack",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "command number"
+            }
+          ],
+          "description": "returns previous command number that the server acknowledged"
         },
         {
           "alias": "realtime",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "time (seconds)"
+            }
+          ],
+          "description": "returns local game time"
         },
         {
           "alias": "tickcount",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "amount of ticks"
+            }
+          ],
+          "description": "returns server's tickcount"
         },
         {
           "alias": "tickinterval",
-          "arguments": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "time (seconds)"
+            }
+          ],
+          "description": "returns time elapsed in one tick"
         }
       ]
     }

@@ -6,20 +6,51 @@
       "functions": [
         {
           "alias": "export",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sConfigAlias",
+              "type": "string",
+              "optional": false,
+              "description": "alias of the config"
+            }
+          ],
+          "returns": [
+            {
+              "type": "string",
+              "description": "encrypted base64 config data"
+            }
+          ],
+          "description": "returns config data by provided alias as encrypted base64"
         },
         {
           "alias": "import",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sConfigAlias",
+              "type": "string",
+              "optional": false,
+              "description": "alias of the config"
+            },
+            {
+              "alias": "sConfigData",
+              "type": "string",
+              "optional": false,
+              "description": "encrypted base64 config data"
+            }
+          ],
+          "description": "writes config data by provided alias to config"
         },
         {
           "alias": "load",
-          "arguments": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sConfigAlias",
+              "type": "string",
+              "optional": false,
+              "description": "alias of the config"
+            }
+          ],
+          "description": "loads config by provided alias"
         }
       ]
     }
