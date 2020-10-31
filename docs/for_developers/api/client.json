@@ -9,11 +9,11 @@
           "returns": [
             {
               "type": "number",
-              "description": "pitch in degrees"
+              "description": "pitch [degrees]"
             },
             {
               "type": "number",
-              "description": "yaw in degrees"
+              "description": "yaw [degrees]"
             }
           ],
           "description": "Gets camera world angles"
@@ -25,13 +25,13 @@
               "alias": "nPitch",
               "type": "number",
               "optional": false,
-              "description": "pitch in degrees"
+              "description": "pitch [degrees]"
             },
             {
               "alias": "nYaw",
               "type": "number",
               "optional": false,
-              "description": "yaw in degrees"
+              "description": "yaw [degrees]"
             }
           ],
           "description": "Sets camera world angles to values provided"
@@ -88,7 +88,7 @@
               "description": "messages to log"
             }
           ],
-          "description": "Logs message(s) with provided color into game console"
+          "description": "logs message(s) with provided color into game console"
         },
         {
           "alias": "create_interface",
@@ -296,27 +296,81 @@
         },
         {
           "alias": "error_log",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sMessage",
+              "type": "string",
+              "optional": false,
+              "description": "message to log"
+            },
+            {
+              "alias": "...",
+              "type": "variadic string",
+              "optional": true,
+              "description": "messages to log"
+            }
+          ],
+          "description": "logs message(s) as error into game console"
         },
         {
           "alias": "exec",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sCommand",
+              "type": "string",
+              "optional": false,
+              "description": "command to execute (append `;` if passing more than one command)"
+            },
+            {
+              "alias": "...",
+              "type": "variadic string",
+              "optional": true,
+              "description": "commands to execute (`;` separated)"
+            }
+          ],
+          "description": "executes game console command(s)"
         },
         {
           "alias": "eye_position",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "x asix coordinate"
+            },
+            {
+              "type": "number",
+              "description": "y asix coordinate"
+            },
+            {
+              "type": "number",
+              "description": "z asix coordinate"
+            }
+          ],
+          "description": "Gets eye position of a local player entity"
         },
         {
           "alias": "find_signature",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sModuleFileName",
+              "type": "string",
+              "optional": false,
+              "description": "a module filename, e.g. `engine.dll`"
+            },
+            {
+              "alias": "sSignature",
+              "type": "string",
+              "optional": false,
+              "description": "a signature (as byte escape sequence, wildcard is `\\xCC`), e.g. `\\xB9\\xCC\\xCC\\xCC\\xCC\\x88\\x46\\x09`"
+            }
+          ],
+          "returns": [
+            {
+              "type": "cdata",
+              "description": "a C data object (a void pointer)"
+            }
+          ],
+          "description": "returns pointer at signature match start inside specified module"
         },
         {
           "alias": "get_cvar",
@@ -326,69 +380,187 @@
         },
         {
           "alias": "get_model_name",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nModelIndex",
+              "type": "number",
+              "optional": false,
+              "description": "a model index"
+            }
+          ],
+          "returns": [
+            {
+              "type": "string",
+              "description": "a model name"
+            }
+          ],
+          "description": "Gets model name by provided model index"
         },
         {
           "alias": "key_state",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nVK",
+              "type": "number",
+              "optional": false,
+              "description": "virtual key code"
+            }
+          ],
+          "returns": [
+            {
+              "type": "boolean",
+              "description": "result of virtual key being pressed"
+            }
+          ],
+          "description": "returns whether the key is pressed"
         },
         {
           "alias": "latency",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "latency [seconds]"
+            }
+          ],
+          "description": "returns your latency in seconds"
         },
         {
           "alias": "log",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sMessage",
+              "type": "string",
+              "optional": false,
+              "description": "message to log"
+            },
+            {
+              "alias": "...",
+              "type": "variadic string",
+              "optional": true,
+              "description": "messages to log"
+            }
+          ],
+          "description": "logs message(s) into game console"
         },
         {
           "alias": "random_float",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nMin",
+              "type": "number",
+              "optional": false,
+              "description": "minimum value"
+            },
+            {
+              "alias": "nMax",
+              "type": "number",
+              "optional": false,
+              "description": "maximum value"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "-"
+            }
+          ],
+          "description": "returns random float in range specified"
         },
         {
           "alias": "random_int",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nMin",
+              "type": "number",
+              "optional": false,
+              "description": "minimum value"
+            },
+            {
+              "alias": "nMax",
+              "type": "number",
+              "optional": false,
+              "description": "maximum value"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "-"
+            }
+          ],
+          "description": "returns random integer in range specified"
         },
         {
           "alias": "register_esp_flag",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sFlag",
+              "type": "string",
+              "optional": false,
+              "description": "a flag"
+            },
+            {
+              "alias": "nR",
+              "type": "number",
+              "optional": false,
+              "description": "red color channel (0 - 255)"
+            },
+            {
+              "alias": "nG",
+              "type": "number",
+              "optional": false,
+              "description": "green color channel (0 - 255)"
+            },
+            {
+              "alias": "nB",
+              "type": "number",
+              "optional": false,
+              "description": "blue color channel (0 - 255)"
+            },
+            {
+              "alias": "fnCallback",
+              "type": "function",
+              "optional": false,
+              "description": "a function that will be called on ui element action. **Entity index is passed to callback function as first argument**"
+            }
+          ],
+          "description": "Sets function that is called for each player entity while drawing the ESP. **Keep in mind that this function requires `Visuals > Player > Flags` feature being active**"
         },
         {
           "alias": "reload_active_scripts",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "description": "forces reload of all loaded scripts"
         },
         {
           "alias": "scale_damage",
           "arguments": [],
           "returns": [],
-          "description": ""
+          "description": "(buggy)"
         },
         {
           "alias": "screen_size",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "width value"
+            },
+            {
+              "type": "number",
+              "description": "height value"
+            }
+          ],
+          "description": "returns dimensions of the game's viewport"
         },
         {
           "alias": "set_clan_tag",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "...",
+              "type": "variadic string",
+              "optional": true,
+              "description": "text(s) to set as clantag (leave empty to remove clantag)"
+            }
+          ],
+          "description": "Sets clantag to the text(s) provided"
         },
         {
           "alias": "set_cvar",
@@ -398,57 +570,237 @@
         },
         {
           "alias": "set_event_callback",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sEventAlias",
+              "type": "string",
+              "optional": false,
+              "description": "an event alias, e.g. `paint` or `player_connect_full` (game events and built-in cheat events, for more info check `For Developers > Events`)"
+            },
+            {
+              "alias": "fnCallback",
+              "type": "function",
+              "optional": false,
+              "description": "a function that will be called when provided event is fired. **Event data is passed to callback function as first argument**"
+            }
+          ],
+          "description": "Sets function that is called when specified even is fired"
         },
         {
           "alias": "system_time",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "hours value"
+            },
+            {
+              "type": "number",
+              "description": "minutes value"
+            },
+            {
+              "type": "number",
+              "description": "seconds value"
+            },
+            {
+              "type": "number",
+              "description": "milliseconds value"
+            }
+          ],
+          "description": "returns your local system time"
         },
         {
           "alias": "timestamp",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "milliseconds value"
+            }
+          ],
+          "description": "returns high precision timestamp in milliseconds"
         },
         {
           "alias": "trace_bullet",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nEntityIndex",
+              "type": "number",
+              "optional": false,
+              "description": "entity index to trace from"
+            },
+            {
+              "alias": "nFromX",
+              "type": "number",
+              "optional": false,
+              "description": "x asix coordinate to trace from"
+            },
+            {
+              "alias": "nFromY",
+              "type": "number",
+              "optional": false,
+              "description": "y asix coordinate to trace from"
+            },
+            {
+              "alias": "nFromZ",
+              "type": "number",
+              "optional": false,
+              "description": "z asix coordinate to trace from"
+            },
+            {
+              "alias": "nToX",
+              "type": "number",
+              "optional": false,
+              "description": "x asix coordinate to trace to"
+            },
+            {
+              "alias": "nToY",
+              "type": "number",
+              "optional": false,
+              "description": "y asix coordinate to trace to"
+            },
+            {
+              "alias": "nToZ",
+              "type": "number",
+              "optional": false,
+              "description": "z asix coordinate to trace to"
+            },
+            {
+              "alias": "bSkipHitboxes",
+              "type": "boolean",
+              "optional": true,
+              "description": "whether to skip expensive entity hitbox checks"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "entity index of entity that intersects trace (can deal damage to)"
+            },
+            {
+              "type": "number",
+              "description": "damage that can be done with local player active weapon at traced world position"
+            }
+          ],
+          "description": "Traces damage from world position as selected entity's active weapon to another world position"
         },
         {
           "alias": "trace_line",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nEntityIndex",
+              "type": "number",
+              "optional": false,
+              "description": "entity index to trace from"
+            },
+            {
+              "alias": "nFromX",
+              "type": "number",
+              "optional": false,
+              "description": "x asix coordinate to trace from"
+            },
+            {
+              "alias": "nFromY",
+              "type": "number",
+              "optional": false,
+              "description": "y asix coordinate to trace from"
+            },
+            {
+              "alias": "nFromZ",
+              "type": "number",
+              "optional": false,
+              "description": "z asix coordinate to trace from"
+            },
+            {
+              "alias": "nToX",
+              "type": "number",
+              "optional": false,
+              "description": "x asix coordinate to trace to"
+            },
+            {
+              "alias": "nToY",
+              "type": "number",
+              "optional": false,
+              "description": "y asix coordinate to trace to"
+            },
+            {
+              "alias": "nToZ",
+              "type": "number",
+              "optional": false,
+              "description": "z asix coordinate to trace to"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "fraction that shows how far the trace went relative to distance between world positions (0.0 - 1.0)"
+            },
+            {
+              "type": "number",
+              "description": "entity index of entity that intersects trace"
+            }
+          ],
+          "description": "Traces visibility from world position to another world position"
         },
         {
           "alias": "unix_time",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "returns": [
+            {
+              "type": "number",
+              "description": "hours value"
+            },
+            {
+              "type": "number",
+              "description": "minutes value"
+            },
+            {
+              "type": "number",
+              "description": "seconds value"
+            },
+            {
+              "type": "number",
+              "description": "milliseconds value"
+            }
+          ],
+          "description": "returns time since 00:00:00 01/01/1970"
         },
         {
           "alias": "unset_event_callback",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "sEventAlias",
+              "type": "string",
+              "optional": false,
+              "description": "an event alias, e.g. `paint` or `player_connect_full` (game events and built-in cheat events, for more info check `For Developers > Events`)"
+            },
+            {
+              "alias": "fnCallback",
+              "type": "function",
+              "optional": false,
+              "description": "a function for which to unset the provided event"
+            }
+          ],
+          "description": "Unsets function that have been called when specified even were fired"
         },
         {
           "alias": "update_player_list",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "description": "Updates player list tab without having to open it"
         },
         {
           "alias": "userid_to_entindex",
-          "arguments": [],
-          "returns": [],
-          "description": ""
+          "arguments": [
+            {
+              "alias": "nUserId",
+              "type": "number",
+              "optional": false,
+              "description": "a userId that is given by some game events"
+            }
+          ],
+          "returns": [
+            {
+              "type": "number",
+              "description": "entity index"
+            }
+          ],
+          "description": "returns entity index that is linked to provided userId"
         },
         {
           "alias": "visible",

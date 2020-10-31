@@ -273,7 +273,7 @@
               "alias": "nInitVK",
               "type": "number",
               "optional": true,
-              "description": "initial virtual key value"
+              "description": "initial virtual key code"
             }
           ],
           "returns": [
