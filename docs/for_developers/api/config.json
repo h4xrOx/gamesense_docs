@@ -6,31 +6,17 @@
       "functions": [
         {
           "alias": "export",
-          "arguments": [
-            {
-              "alias": "sConfigAlias",
-              "type": "string",
-              "optional": false,
-              "description": "alias of the config"
-            }
-          ],
           "returns": [
             {
               "type": "string",
               "description": "encrypted base64 config data"
             }
           ],
-          "description": "returns config data by provided alias as encrypted base64"
+          "description": "returns current config data as encrypted base64"
         },
         {
           "alias": "import",
           "arguments": [
-            {
-              "alias": "sConfigAlias",
-              "type": "string",
-              "optional": false,
-              "description": "alias of the config"
-            },
             {
               "alias": "sConfigData",
               "type": "string",
@@ -38,7 +24,7 @@
               "description": "encrypted base64 config data"
             }
           ],
-          "description": "writes config data by provided alias to config"
+          "description": "writes config data to current config"
         },
         {
           "alias": "load",
