@@ -27,7 +27,6 @@ namespace GenDoc
         [JsonProperty("data")]
         public string Data { get; set; }
     }
-
     public class Example
     {
         [JsonProperty("title")]
@@ -38,6 +37,43 @@ namespace GenDoc
 
         [JsonProperty("data")]
         public string Data { get; set; }
+    }
+
+    public class LuaEventParameter
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+    }
+    public class LuaEvent
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("parameters")]
+        public List<LuaEventParameter> Parameters { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("admonitions")]
+        public List<Admonition> Admonitions { get; set; }
+    }
+    public class LuaEventsTable
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("events")]
+        public List<LuaEvent> Events { get; set; }
+
+        [JsonProperty("examples")]
+        public List<Example> Examples { get; set; }
     }
 
     public class LuaFunctionArgument
@@ -54,7 +90,6 @@ namespace GenDoc
         [JsonProperty("description")]
         public string Description { get; set; }
     }
-
     public class LuaFunctionReturn
     {
         [JsonProperty("type")]
@@ -63,7 +98,6 @@ namespace GenDoc
         [JsonProperty("description")]
         public string Description { get; set; }
     }
-
     public class LuaFunction
     {
         [JsonProperty("alias")]
@@ -81,7 +115,6 @@ namespace GenDoc
         [JsonProperty("admonitions")]
         public List<Admonition> Admonitions { get; set; }
     }
-
     public class LuaFunctionsTable
     {
         [JsonProperty("alias")]
@@ -273,9 +306,12 @@ namespace GenDoc
                                 {
                                     foreach (var luaFunctionAdmonition in luaFunction.Admonitions)
                                     {
-                                        stringBuilder.AppendLine($"!!! {luaFunctionAdmonition.Type} \"{luaFunctionAdmonition.Title}\"");
+                                        stringBuilder.AppendLine($"!!! {luaFunctionAdmonition.Type} \"{luaFunctionAdmonition.Title}\"\n");
 
-                                        stringBuilder.AppendLine($"    {luaFunctionAdmonition.Data}");
+                                        foreach (var admonitionDataLine in luaFunctionAdmonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                        {
+                                            stringBuilder.AppendLine($"    {admonitionDataLine}");
+                                        }
 
                                         stringBuilder.Append("\n");
                                     }
@@ -292,6 +328,93 @@ namespace GenDoc
                                 stringBuilder.AppendLine("??? example \"Examples\"");
 
                                 foreach (var example in luaFunctionsTable.Examples)
+                                {
+                                    stringBuilder.AppendLine($"\n    === \"{example.Title}\"\n");
+
+                                    stringBuilder.AppendLine($"        ``` {example.Language} linenums=\"1\"");
+
+                                    foreach (var exampleDataLine in example.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                    {
+                                        stringBuilder.AppendLine($"        {exampleDataLine}");
+                                    }
+
+                                    stringBuilder.AppendLine("        ```");
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    GenDocType.LuaEventsArray,
+                    (stringBuilder, jsonMapRoot) =>
+                    {
+                        var jsonMapRootCastMyArray = jsonMapRoot.MyArray.ToObject<List<LuaEventsTable>>();
+
+                        if (jsonMapRootCastMyArray == null)
+                            return;
+
+                        foreach (var luaEventsTable in jsonMapRootCastMyArray)
+                        {
+                            stringBuilder.AppendLine($"## {luaEventsTable.Alias}\n\n---\n");
+
+                            if (luaEventsTable.Events == null) continue;
+
+                            /*
+                             * Write events data
+                             */
+                            foreach (var luaEvent in luaEventsTable.Events)
+                            {
+                                stringBuilder.AppendLine($"### {luaEvent.Alias}\n");
+
+                                if (!string.IsNullOrEmpty(luaEvent.Description))
+                                    stringBuilder.AppendLine($"{luaEvent.Description}\n");
+
+                                /*
+                                 * Write table of parameters
+                                 */
+                                if (luaEvent.Parameters != null && luaEvent.Parameters.Count > 0)
+                                {
+                                    stringBuilder.AppendLine("|Parameter|Type|Description|");
+                                    stringBuilder.AppendLine("|-|-|-|");
+
+                                    foreach (var luaEventParameter in luaEvent.Parameters)
+                                    {
+                                        stringBuilder.AppendLine(
+                                            $"|e{luaEventParameter.Alias}|{luaEventParameter.Type}|{luaEventParameter.Description}|");
+                                    }
+
+                                    stringBuilder.Append("\n");
+                                }
+
+                                /*
+                                 * Write admonitions
+                                 */
+                                if (luaEvent.Admonitions != null && luaEvent.Admonitions.Count > 0)
+                                {
+                                    foreach (var luaFunctionAdmonition in luaEvent.Admonitions)
+                                    {
+                                        stringBuilder.AppendLine($"!!! {luaFunctionAdmonition.Type} \"{luaFunctionAdmonition.Title}\"\n");
+
+                                        foreach (var admonitionDataLine in luaFunctionAdmonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                        {
+                                            stringBuilder.AppendLine($"    {admonitionDataLine}");
+                                        }
+
+                                        stringBuilder.Append("\n");
+                                    }
+                                }
+                            }
+
+                            /*
+                             * Write examples data
+                             */
+                            if (luaEventsTable.Examples != null && luaEventsTable.Examples.Count > 0)
+                            {
+                                stringBuilder.AppendLine("## Examples\n");
+
+                                stringBuilder.AppendLine("??? example \"Examples\"");
+
+                                foreach (var example in luaEventsTable.Examples)
                                 {
                                     stringBuilder.AppendLine($"\n    === \"{example.Title}\"\n");
 

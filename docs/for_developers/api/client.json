@@ -41,15 +41,15 @@
           "returns": [
             {
               "type": "number",
-              "description": "x asix coordinate"
+              "description": "x asix coordinate (units)"
             },
             {
               "type": "number",
-              "description": "y asix coordinate"
+              "description": "y asix coordinate (units)"
             },
             {
               "type": "number",
-              "description": "z asix coordinate"
+              "description": "z asix coordinate (units)"
             }
           ],
           "description": "returns camera world position coordinates"
@@ -173,19 +173,19 @@
               "alias": "nX",
               "type": "number",
               "optional": false,
-              "description": "x asix coordinate"
+              "description": "x asix coordinate (units)"
             },
             {
               "alias": "nY",
               "type": "number",
               "optional": false,
-              "description": "y asix coordinate"
+              "description": "y asix coordinate (units)"
             },
             {
               "alias": "nZ",
               "type": "number",
               "optional": false,
-              "description": "z asix coordinate"
+              "description": "z asix coordinate (units)"
             },
             {
               "alias": "nLineOffset",
@@ -433,15 +433,15 @@
           "returns": [
             {
               "type": "number",
-              "description": "x asix coordinate"
+              "description": "x asix coordinate (units)"
             },
             {
               "type": "number",
-              "description": "y asix coordinate"
+              "description": "y asix coordinate (units)"
             },
             {
               "type": "number",
-              "description": "z asix coordinate"
+              "description": "z asix coordinate (units)"
             }
           ],
           "description": "returns eye position of a local player entity"
@@ -644,7 +644,7 @@
               "alias": "fnCallback",
               "type": "function",
               "optional": false,
-              "description": "a function that will be called on ui element action. **Entity index is passed to callback function as first argument**"
+              "description": "a function that will be called on ui element action. **Entity index is passed to callback function as first parameter**"
             }
           ],
           "description": "sets function that is called for each player entity while drawing the ESP",
@@ -722,7 +722,7 @@
               "alias": "fnCallback",
               "type": "function",
               "optional": false,
-              "description": "a function that will be called when provided event is fired. **Event data is passed to callback function as first argument**"
+              "description": "a function that will be called when provided event is fired. **Event data is passed to callback function as first parameter**"
             }
           ],
           "description": "sets function that is called when specified even is fired",
@@ -779,37 +779,37 @@
               "alias": "nFromX",
               "type": "number",
               "optional": false,
-              "description": "x asix coordinate to trace from"
+              "description": "x asix coordinate (units) to trace from"
             },
             {
               "alias": "nFromY",
               "type": "number",
               "optional": false,
-              "description": "y asix coordinate to trace from"
+              "description": "y asix coordinate (units) to trace from"
             },
             {
               "alias": "nFromZ",
               "type": "number",
               "optional": false,
-              "description": "z asix coordinate to trace from"
+              "description": "z asix coordinate (units) to trace from"
             },
             {
               "alias": "nToX",
               "type": "number",
               "optional": false,
-              "description": "x asix coordinate to trace to"
+              "description": "x asix coordinate (units) to trace to"
             },
             {
               "alias": "nToY",
               "type": "number",
               "optional": false,
-              "description": "y asix coordinate to trace to"
+              "description": "y asix coordinate (units) to trace to"
             },
             {
               "alias": "nToZ",
               "type": "number",
               "optional": false,
-              "description": "z asix coordinate to trace to"
+              "description": "z asix coordinate (units) to trace to"
             },
             {
               "alias": "bSkipHitboxes",
@@ -843,37 +843,37 @@
               "alias": "nFromX",
               "type": "number",
               "optional": false,
-              "description": "x asix coordinate to trace from"
+              "description": "x asix coordinate (units) to trace from"
             },
             {
               "alias": "nFromY",
               "type": "number",
               "optional": false,
-              "description": "y asix coordinate to trace from"
+              "description": "y asix coordinate (units) to trace from"
             },
             {
               "alias": "nFromZ",
               "type": "number",
               "optional": false,
-              "description": "z asix coordinate to trace from"
+              "description": "z asix coordinate (units) to trace from"
             },
             {
               "alias": "nToX",
               "type": "number",
               "optional": false,
-              "description": "x asix coordinate to trace to"
+              "description": "x asix coordinate (units) to trace to"
             },
             {
               "alias": "nToY",
               "type": "number",
               "optional": false,
-              "description": "y asix coordinate to trace to"
+              "description": "y asix coordinate (units) to trace to"
             },
             {
               "alias": "nToZ",
               "type": "number",
               "optional": false,
-              "description": "z asix coordinate to trace to"
+              "description": "z asix coordinate (units) to trace to"
             }
           ],
           "returns": [

@@ -33,7 +33,7 @@ nav:
       - plist:            ./for_developers/api/plist.md
       - renderer:         ./for_developers/api/renderer.md
       - ui:               ./for_developers/api/ui.md
-    - Events:         ./for_developers/events.md
+    - Events:         ./for_developers/events/events.md
     - Netprops:       ./for_developers/netprops.md
     - Tips & Tricks:  ./for_developers/tips_and_tricks.md
 theme:

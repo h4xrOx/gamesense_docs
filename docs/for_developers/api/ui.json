@@ -37,11 +37,11 @@
           "returns": [
             {
               "type": "number",
-              "description": "x asix coordinate [px]"
+              "description": "x asix coordinate (units) [px]"
             },
             {
               "type": "number",
-              "description": "y asix coordinate [px]"
+              "description": "y asix coordinate (units) [px]"
             }
           ],
           "description": "returns position of the menu from top left of game's viewport"
@@ -65,11 +65,11 @@
           "returns": [
             {
               "type": "number",
-              "description": "x asix coordinate [px]"
+              "description": "x asix coordinate (units) [px]"
             },
             {
               "type": "number",
-              "description": "y asix coordinate [px]"
+              "description": "y asix coordinate (units) [px]"
             }
           ],
           "description": "returns position of the menu"
@@ -436,7 +436,7 @@
               "alias": "bShowTooltip",
               "type": "boolean",
               "optional": true,
-              "description": "whether or not to show current value of the slider"
+              "description": "whether to show current value of the slider"
             },
             {
               "alias": "sUnit",
@@ -615,7 +615,7 @@
             {
               "type": "info",
               "title": "",
-              "data": "Reference of bound ui element is passed to callback function as first argument"
+              "data": "Reference of bound ui element is passed to callback function as first parameter"
             }
           ]
         },

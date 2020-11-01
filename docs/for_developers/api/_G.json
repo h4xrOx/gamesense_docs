@@ -29,19 +29,19 @@
               "alias": "nX",
               "type": "number",
               "optional": false,
-              "description": "x asix coordinate"
+              "description": "x asix coordinate (units)"
             },
             {
               "alias": "nY",
               "type": "number",
               "optional": false,
-              "description": "y asix coordinate"
+              "description": "y asix coordinate (units)"
             },
             {
               "alias": "nZ",
               "type": "number",
               "optional": false,
-              "description": "z asix coordinate"
+              "description": "z asix coordinate (units)"
             }
           ],
           "returns": [
