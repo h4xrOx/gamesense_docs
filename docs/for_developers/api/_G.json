@@ -181,6 +181,18 @@
             }
           ]
         }
+      ],
+      "examples": [
+        {
+          "title": "vtable_bind.lua",
+          "language": "lua",
+          "data": "--8<-- \"docs/for_developers/api/examples/vtable_bind.lua\""
+        },
+        {
+          "title": "vtable_thunk.lua",
+          "language": "lua",
+          "data": "--8<-- \"docs/for_developers/api/examples/vtable_thunk.lua\""
+        }
       ]
     }
   ]

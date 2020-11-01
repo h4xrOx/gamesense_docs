@@ -28,6 +28,18 @@ namespace GenDoc
         public string Data { get; set; }
     }
 
+    public class Example
+    {
+        [JsonProperty("title")]
+        public string Title { get; set; }
+
+        [JsonProperty("language")]
+        public string Language { get; set; }
+
+        [JsonProperty("data")]
+        public string Data { get; set; }
+    }
+
     public class LuaFunctionArgument
     {
         [JsonProperty("alias")]
@@ -77,6 +89,9 @@ namespace GenDoc
 
         [JsonProperty("functions")]
         public List<LuaFunction> Functions { get; set; }
+
+        [JsonProperty("examples")]
+        public List<Example> Examples { get; set; }
     }
 
     public class Root
@@ -137,6 +152,9 @@ namespace GenDoc
 
                             if (luaFunctionsTable.Functions == null) continue;
 
+                            /*
+                             * Write functions data
+                             */
                             foreach (var luaFunction in luaFunctionsTable.Functions)
                             {
                                 stringBuilder.AppendLine($"### {luaFunction.Alias}\n");
@@ -251,7 +269,6 @@ namespace GenDoc
                                 /*
                                  * Write admonitions
                                  */
-
                                 if (luaFunction.Admonitions != null && luaFunction.Admonitions.Count > 0)
                                 {
                                     foreach (var luaFunctionAdmonition in luaFunction.Admonitions)
@@ -262,6 +279,30 @@ namespace GenDoc
 
                                         stringBuilder.Append("\n");
                                     }
+                                }
+                            }
+
+                            /*
+                             * Write examples data
+                             */
+                            if (luaFunctionsTable.Examples != null && luaFunctionsTable.Examples.Count > 0)
+                            {
+                                stringBuilder.AppendLine("## Examples\n");
+
+                                stringBuilder.AppendLine("??? example \"Examples\"");
+
+                                foreach (var example in luaFunctionsTable.Examples)
+                                {
+                                    stringBuilder.AppendLine($"\n    === \"{example.Title}\"\n");
+
+                                    stringBuilder.AppendLine($"        ``` {example.Language} linenums=\"1\"");
+
+                                    foreach (var exampleDataLine in example.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                    {
+                                        stringBuilder.AppendLine($"        {exampleDataLine}");
+                                    }
+
+                                    stringBuilder.AppendLine("        ```");
                                 }
                             }
                         }
