@@ -14,6 +14,7 @@ namespace GenDoc
         LuaFunctionsTableArray,
         LuaEventsArray,
         LuaNetpropsDTArray,
+        CheatFeaturesArray
     }
 
     public class Admonition
@@ -37,6 +38,58 @@ namespace GenDoc
 
         [JsonProperty("data")]
         public string Data { get; set; }
+    }
+
+    public class CheatFeatureContainerElement
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("refalias")]
+        public string RefAlias { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("admonitions")]
+        public List<Admonition> Admonitions { get; set; }
+    }
+    public class CheatFeatureContainer
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("refalias")]
+        public string RefAlias { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("elements")]
+        public List<CheatFeatureContainerElement> Elements { get; set; }
+
+        [JsonProperty("admonitions")]
+        public List<Admonition> Admonitions { get; set; }
+    }
+    public class CheatFeature
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("refalias")]
+        public string RefAlias { get; set; }
+
+        [JsonProperty("description")]
+        public string Description { get; set; }
+
+        [JsonProperty("containers")]
+        public List<CheatFeatureContainer> Containers { get; set; }
+
+        [JsonProperty("admonitions")]
+        public List<Admonition> Admonitions { get; set; }
     }
 
     public class LuaNetprop
@@ -324,11 +377,11 @@ namespace GenDoc
                                  */
                                 if (luaFunction.Admonitions != null && luaFunction.Admonitions.Count > 0)
                                 {
-                                    foreach (var luaFunctionAdmonition in luaFunction.Admonitions)
+                                    foreach (var admonition in luaFunction.Admonitions)
                                     {
-                                        stringBuilder.AppendLine($"!!! {luaFunctionAdmonition.Type} \"{luaFunctionAdmonition.Title}\"\n");
+                                        stringBuilder.AppendLine($"!!! {admonition.Type} \"{admonition.Title}\"\n");
 
-                                        foreach (var admonitionDataLine in luaFunctionAdmonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                        foreach (var admonitionDataLine in admonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
                                         {
                                             stringBuilder.AppendLine($"    {admonitionDataLine}");
                                         }
@@ -411,11 +464,11 @@ namespace GenDoc
                                  */
                                 if (luaEvent.Admonitions != null && luaEvent.Admonitions.Count > 0)
                                 {
-                                    foreach (var luaFunctionAdmonition in luaEvent.Admonitions)
+                                    foreach (var admonition in luaEvent.Admonitions)
                                     {
-                                        stringBuilder.AppendLine($"!!! {luaFunctionAdmonition.Type} \"{luaFunctionAdmonition.Title}\"\n");
+                                        stringBuilder.AppendLine($"!!! {admonition.Type} \"{admonition.Title}\"\n");
 
-                                        foreach (var admonitionDataLine in luaFunctionAdmonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                        foreach (var admonitionDataLine in admonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
                                         {
                                             stringBuilder.AppendLine($"    {admonitionDataLine}");
                                         }
@@ -496,6 +549,119 @@ namespace GenDoc
                                 }
 
                                 stringBuilder.Append("\n");
+                            }
+                        }
+                    }
+                },
+                {
+                    GenDocType.CheatFeaturesArray,
+                    (stringBuilder, jsonMapRoot) =>
+                    {
+                        var jsonMapRootCastMyArray = jsonMapRoot.MyArray.ToObject<List<CheatFeature>>();
+
+                        if (jsonMapRootCastMyArray == null)
+                            return;
+
+                        foreach (var cheatFeature in jsonMapRootCastMyArray)
+                        {
+                            stringBuilder.AppendLine($"## {cheatFeature.Alias}\n\n---\n");
+
+                            if (!string.IsNullOrEmpty(cheatFeature.RefAlias))
+                                    stringBuilder.AppendLine($"Reference by: `{cheatFeature.RefAlias}`\n");
+
+                            if (!string.IsNullOrEmpty(cheatFeature.Description))
+                                    stringBuilder.AppendLine($"{cheatFeature.Description}\n");
+
+                            /*
+                             * Write admonitions
+                             */
+                            if (cheatFeature.Admonitions != null && cheatFeature.Admonitions.Count > 0)
+                            {
+                                foreach (var admonition in cheatFeature.Admonitions)
+                                {
+                                    stringBuilder.AppendLine($"!!! {admonition.Type} \"{admonition.Title}\"\n");
+
+                                    foreach (var admonitionDataLine in admonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                    {
+                                        stringBuilder.AppendLine($"    {admonitionDataLine}");
+                                    }
+
+                                    stringBuilder.Append("\n");
+                                }
+                            }
+
+                            /*
+                             * Write containers
+                             */
+                            if (cheatFeature.Containers != null && cheatFeature.Containers.Count > 0)
+                            {
+                                stringBuilder.AppendLine($"??? abstract \"Containers\"\n");
+
+                                foreach (var container in cheatFeature.Containers)
+                                {
+                                    stringBuilder.AppendLine($"    ### {container.Alias}\n\n    ---\n");
+
+                                    if (!string.IsNullOrEmpty(container.RefAlias))
+                                        stringBuilder.AppendLine($"    Reference by: `{container.RefAlias}`\n");
+
+                                    if (!string.IsNullOrEmpty(container.Description))
+                                        stringBuilder.AppendLine($"    {container.Description}\n");
+
+                                    /*
+                                     * Write admonitions
+                                     */
+                                    if (container.Admonitions != null && container.Admonitions.Count > 0)
+                                    {
+                                        foreach (var admonition in container.Admonitions)
+                                        {
+                                            stringBuilder.AppendLine($"    !!! {admonition.Type} \"{admonition.Title}\"\n");
+
+                                            foreach (var admonitionDataLine in admonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                            {
+                                                stringBuilder.AppendLine($"        {admonitionDataLine}");
+                                            }
+
+                                            stringBuilder.Append("\n");
+                                        }
+                                    }
+
+                                    /*
+                                     * Write elements
+                                     */
+                                    if (container.Elements != null && container.Elements.Count > 0)
+                                    {
+                                        stringBuilder.AppendLine($"    ??? abstract \"Elements\"\n");
+
+                                        foreach (var element in container.Elements)
+                                        {
+                                            stringBuilder.AppendLine($"        #### {element.Alias}\n\n        ---\n");
+
+                                            if (!string.IsNullOrEmpty(element.RefAlias))
+                                                stringBuilder.AppendLine($"        Reference by: `{element.RefAlias}`, Value type: `({element.Type})`\n");
+
+                                            if (!string.IsNullOrEmpty(element.Description))
+                                                stringBuilder.AppendLine($"        {element.Description}\n");
+
+                                            /*
+                                             * Write admonitions
+                                             */
+                                            if (element.Admonitions != null && element.Admonitions.Count > 0)
+                                            {
+                                                foreach (var admonition in element.Admonitions)
+                                                {
+                                                    stringBuilder.AppendLine($"        !!! {admonition.Type} \"{admonition.Title}\"\n");
+
+                                                    foreach (var admonitionDataLine in admonition.Data.Split(new[] { "\n", Environment.NewLine }, StringSplitOptions.None))
+                                                    {
+                                                        stringBuilder.AppendLine($"            {admonitionDataLine}");
+                                                    }
+
+                                                    stringBuilder.Append("\n");
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }

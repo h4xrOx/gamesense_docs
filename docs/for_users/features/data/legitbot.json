@@ -4,41 +4,35 @@
     {
       "alias": "Legitbot",
       "refalias": "LEGIT",
-      "description": "",
+      "description": "A legitbot tab",
       "containers": [
         {
           "alias": "Weapon Type",
           "refalias": "Weapon Type",
-          "description": "",
+          "description": "A container",
           "elements": [
             {
               "alias": "Weapon Type",
               "refalias": "Weapon Type",
               "type": "string",
-              "description": "",
+              "description": "Element for switching legitbot weapon type configuration",
               "admonitions": [
                 {
                   "type": "tip",
                   "title": "",
-                  "data": "Sample admonition for element"
+                  "data": "Automatically changes to active local player weapon"
                 }
               ]
             }
           ],
-          "admonitions": [
-            {
-              "type": "tip",
-              "title": "",
-              "data": "Sample admonition for container"
-            }
-          ]
+          "admonitions": []
         }
       ],
       "admonitions": [
         {
           "type": "tip",
           "title": "",
-          "data": "Sample admonition for tab"
+          "data": "Features in this tab are inactive, when Ragebot is active"
         }
       ]
     }

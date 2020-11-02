@@ -10,23 +10,23 @@
       "netprops": [
         {
           "alias": "m_flSimulationTime",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_cellbits",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_cellX",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_cellY",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_cellZ",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_vecOrigin",
@@ -34,35 +34,35 @@
         },
         {
           "alias": "m_nModelIndex",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_nRenderFX",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_nRenderMode",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_fEffects",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_clrRender",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_iTeamNum",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_iPendingTeamNum",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_CollisionGroup",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_flElasticity",
@@ -74,19 +74,19 @@
         },
         {
           "alias": "m_hOwnerEntity",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_hEffectEntity",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "moveparent",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_iParentAttachment",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_iName",
@@ -94,11 +94,11 @@
         },
         {
           "alias": "movetype",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "movecollide",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_angRotation",
@@ -106,31 +106,31 @@
         },
         {
           "alias": "m_iTextureFrameIndex",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_bSimulatedEveryTick",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_bAnimatedEveryTick",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_bAlternateSorting",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_bSpotted",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_bSpottedByMask",
-          "type": "array<integer>[0-1]"
+          "type": "(int)array[0-1]"
         },
         {
           "alias": "m_bIsAutoaimTarget",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_fadeMinDist",
@@ -146,19 +146,19 @@
         },
         {
           "alias": "m_nMinCPULevel",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_nMaxCPULevel",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_nMinGPULevel",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_nMaxGPULevel",
-          "type": "integer"
+          "type": "int"
         },
         {
           "alias": "m_flUseLookAtAngle",
@@ -174,7 +174,7 @@
         },
         {
           "alias": "m_bEligibleForScreenHighlight",
-          "type": "integer"
+          "type": "int"
         }
       ]
     }
