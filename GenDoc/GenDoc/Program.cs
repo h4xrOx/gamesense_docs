@@ -39,6 +39,26 @@ namespace GenDoc
         public string Data { get; set; }
     }
 
+    public class LuaNetprop
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("type")]
+        public string Type { get; set; }
+    }
+    public class LuaNetpropDT
+    {
+        [JsonProperty("alias")]
+        public string Alias { get; set; }
+
+        [JsonProperty("inherits")]
+        public List<string> Inherits { get; set; }
+
+        [JsonProperty("netprops")]
+        public List<LuaNetprop> Netprops { get; set; }
+    }
+
     public class LuaEventParameter
     {
         [JsonProperty("alias")]
@@ -427,6 +447,55 @@ namespace GenDoc
 
                                     stringBuilder.AppendLine("        ```");
                                 }
+                            }
+                        }
+                    }
+                },
+                {
+                    GenDocType.LuaNetpropsDTArray,
+                    (stringBuilder, jsonMapRoot) =>
+                    {
+                        var jsonMapRootCastMyArray = jsonMapRoot.MyArray.ToObject<List<LuaNetpropDT>>();
+
+                        if (jsonMapRootCastMyArray == null)
+                            return;
+
+                        foreach (var luaNetpropDt in jsonMapRootCastMyArray)
+                        {
+                            stringBuilder.AppendLine($"## {luaNetpropDt.Alias}\n\n---\n");
+
+                            /*
+                             * Write inherits
+                             */
+                            if (luaNetpropDt.Inherits != null && luaNetpropDt.Inherits.Count > 0)
+                            {
+                                stringBuilder.AppendLine("### Inherits\n");
+
+                                stringBuilder.AppendLine("!!! info \"\"");
+
+                                foreach (var inherit in luaNetpropDt.Inherits)
+                                {
+                                    stringBuilder.AppendLine($"    [{inherit}](./{inherit}.md)\n");
+                                }
+                            }
+
+                            /*
+                             * Write table of parameters
+                             */
+                            if (luaNetpropDt.Netprops != null && luaNetpropDt.Netprops.Count > 0)
+                            {
+                                stringBuilder.AppendLine("### Members\n");
+
+                                stringBuilder.AppendLine("|Member|Type|");
+                                stringBuilder.AppendLine("|-|-|");
+
+                                foreach (var netprop in luaNetpropDt.Netprops)
+                                {
+                                    stringBuilder.AppendLine(
+                                        $"|{netprop.Alias}|{netprop.Type}|");
+                                }
+
+                                stringBuilder.Append("\n");
                             }
                         }
                     }
