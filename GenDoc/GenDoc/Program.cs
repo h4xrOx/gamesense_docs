@@ -13,7 +13,7 @@ namespace GenDoc
     {
         LuaFunctionsTableArray,
         LuaEventsArray,
-        LuaNetPropsTableArray,
+        LuaNetpropsDTArray,
     }
 
     public class Admonition
@@ -435,7 +435,8 @@ namespace GenDoc
 
         private static void ForType(GenDocType type, StringBuilder stringBuilder, Root jsonMapRoot)
         {
-            TypeToAction[type](stringBuilder, jsonMapRoot);
+            if (TypeToAction.ContainsKey(type))
+                TypeToAction[type](stringBuilder, jsonMapRoot);
         }
 
         public static void ForFile(string path)
@@ -454,9 +455,13 @@ namespace GenDoc
 
             var jsonMapRoot = JsonConvert.DeserializeObject<Root>(streamReader.ReadToEndAsync().Result);
 
-            var docType = (GenDocType)Enum.Parse(typeof(GenDocType), jsonMapRoot.Type);
+            if (jsonMapRoot == null) return;
 
-            ForType(docType, stringBuilder, jsonMapRoot);
+            Enum.TryParse(typeof(GenDocType), jsonMapRoot.Type, out var docType);
+
+            if (docType == null) return;
+
+            ForType((GenDocType)docType, stringBuilder, jsonMapRoot);
 
             streamWriter.Write(stringBuilder);
         }

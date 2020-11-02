@@ -1,0 +1,46 @@
+{
+  "type": "CheatFeaturesArray",
+  "MyArray": [
+    {
+      "alias": "Legitbot",
+      "refalias": "LEGIT",
+      "description": "",
+      "containers": [
+        {
+          "alias": "Weapon Type",
+          "refalias": "Weapon Type",
+          "description": "",
+          "elements": [
+            {
+              "alias": "Weapon Type",
+              "refalias": "Weapon Type",
+              "type": "string",
+              "description": "",
+              "admonitions": [
+                {
+                  "type": "tip",
+                  "title": "",
+                  "data": "Sample admonition for element"
+                }
+              ]
+            }
+          ],
+          "admonitions": [
+            {
+              "type": "tip",
+              "title": "",
+              "data": "Sample admonition for container"
+            }
+          ]
+        }
+      ],
+      "admonitions": [
+        {
+          "type": "tip",
+          "title": "",
+          "data": "Sample admonition for tab"
+        }
+      ]
+    }
+  ]
+}
