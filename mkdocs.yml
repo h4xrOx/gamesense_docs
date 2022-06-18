@@ -1,4 +1,8 @@
-site_name: gamesensical.gitbook.io/docs/
+# gamesense_docs # https://gamesensical.gitbook.io/docs/
+
+Documentation usage of gamesense.pub features for users and developers. (WIP)
+
+site_name: gamesense_docs
 nav:
   - Home: index.md
   - For users:
