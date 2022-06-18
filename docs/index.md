@@ -1,17 +1,7 @@
-# Welcome to MkDocs
+# Welcome to gamesense_docs
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+This website documents the usage of gamesense.pub features for users and developers.
 
-## Commands
+All content is split by categories. Use navigation bar and/or search to find what you interested in.
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+(Search does not work in `serve` mode)
