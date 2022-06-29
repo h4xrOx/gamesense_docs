@@ -1,6 +1,6 @@
-site_name: gamesense_docs
+site_name: gamesensical.gitbook.io
 nav:
-  - Home: index.md
+  - Home: ./for_developers/getting_started.md
   - For users:
     - Getting Started:  ./for_users/getting_started.md
     - Features:
