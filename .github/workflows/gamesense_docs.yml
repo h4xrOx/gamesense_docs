@@ -4,7 +4,7 @@ Documentation usage of gamesense.pub features for users and developers. (WIP)
 
 site_name: gamesense_docs
 nav:
-  - Home: ./for_developers/api/about.md
+  - Home: getting_started.md
   - For users:
     - Getting Started:  ./for_users/getting_started.md
     - Features:
