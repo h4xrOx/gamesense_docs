@@ -2,7 +2,7 @@
 
 Documentation usage of gamesense.pub features for users and developers. (WIP)
 
-site_name: gamesense_docs
+site_name: gamesensical.gitbook.io/docs
 nav:
   - Home: index.md
   - For users:
